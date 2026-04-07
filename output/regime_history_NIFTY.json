@@ -7149,7 +7149,7 @@
     "regime": "bull_low_vol",
     "ret_21d": 0.09982073545229242,
     "symbol": "NIFTY",
-    "vol_ratio": 0.7108433520390415
+    "vol_ratio": 0.7108433520390414
   },
   {
     "close": 17698.65,
@@ -14246,5 +14246,77 @@
     "ret_21d": -0.10207458391662783,
     "symbol": "NIFTY",
     "vol_ratio": 1.1937567424350637
+  },
+  {
+    "close": 23134.65,
+    "date": "2026-03-20",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.10345235165661337,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.236806868751498
+  },
+  {
+    "close": 22489.45,
+    "date": "2026-03-23",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.11516163744346675,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.2306489609703972
+  },
+  {
+    "close": 22956.35,
+    "date": "2026-03-24",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.10205746024916396,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.249762191241898
+  },
+  {
+    "close": 23309.0,
+    "date": "2026-03-25",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.0931761593526299,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.30745087524504
+  },
+  {
+    "close": 22835.5,
+    "date": "2026-03-27",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.1030920749010713,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.3288813122629721
+  },
+  {
+    "close": 22379.2,
+    "date": "2026-03-30",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.12164890996971978,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.3319593652039599
+  },
+  {
+    "close": 22703.15,
+    "date": "2026-04-01",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.10944640356485813,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.329520422005559
+  },
+  {
+    "close": 22700.25,
+    "date": "2026-04-02",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.09854537801110319,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.3580849921355629
+  },
+  {
+    "close": 22955.6,
+    "date": "2026-04-06",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.07622410688236303,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.3547987378092463
   }
 ]

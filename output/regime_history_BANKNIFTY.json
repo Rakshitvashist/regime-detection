@@ -717,7 +717,7 @@
     "regime": "sideways_normal_vol",
     "ret_21d": -0.041962612171778324,
     "symbol": "BANKNIFTY",
-    "vol_ratio": 1.0514425230185411
+    "vol_ratio": 1.0514425230185414
   },
   {
     "close": 28566.85,
@@ -14246,5 +14246,77 @@
     "ret_21d": -0.12182827460100953,
     "symbol": "BANKNIFTY",
     "vol_ratio": 1.297132498989742
+  },
+  {
+    "close": 53453.85,
+    "date": "2026-03-20",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.131107916101467,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.3091023564348596
+  },
+  {
+    "close": 51446.15,
+    "date": "2026-03-23",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.151903825785207,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.2842693603116295
+  },
+  {
+    "close": 52745.65,
+    "date": "2026-03-24",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.13730212535584108,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.309088759412257
+  },
+  {
+    "close": 53695.05,
+    "date": "2026-03-25",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.12370450942104494,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.3605384163696033
+  },
+  {
+    "close": 52364.35,
+    "date": "2026-03-27",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.1425863871516535,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.3928777649222062
+  },
+  {
+    "close": 50397.65,
+    "date": "2026-03-30",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.17397625234890968,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.3900380544321398
+  },
+  {
+    "close": 51526.1,
+    "date": "2026-04-01",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.1566508993894954,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.3914773935723028
+  },
+  {
+    "close": 51556.2,
+    "date": "2026-04-02",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.1475841339099193,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.432073507571268
+  },
+  {
+    "close": 52572.7,
+    "date": "2026-04-06",
+    "regime": "bear_high_vol",
+    "ret_21d": -0.12168109990552345,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.440104436180117
   }
 ]

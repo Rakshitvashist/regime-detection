@@ -25,19 +25,22 @@ def get_args():
     parser.add_argument("--input", default="output/features.json")
     parser.add_argument("--symbol", default="NIFTY_500")
     parser.add_argument("--output", default="output/regime_ml.json")
+    parser.add_argument("--model", default="output/xgb_model.pkl")
     parser.add_argument("--horizon", type=int, default=21)
     return parser.parse_args()
 
 XGB_FEATURES = [
-    "ret_1d", "ret_5d", "ret_10d",
-    "vol_10d", "vol_21d", "vol_ratio",
+    "ret_10d",
+    "vol_21d", "vol_ratio",
     "skew_21d", "kurt_21d",
     "rsi_14", "rsi_21",
     "macd_h", "bb_pct", "ema_gap", "adx",
     "drawdown_21d",
-    "drawdown_63d",
     "mom_divergence",
     "vol_spike",
+    "dist_from_252h",
+    "tii_21",
+    "vol_of_vol_21",
 ]
 
 def calculate_checklist(row, probs):
@@ -78,19 +81,34 @@ def load_data(path):
     return df
 
 def add_structural_features(df):
-    """Derived features that are key for bear detection structure."""
+    """Derived features that should match research training scripts."""
     df = df.copy()
+
+    if "vol_21d" not in df.columns:
+        df["vol_21d"] = df["close"].pct_change().rolling(21).std() * np.sqrt(252)
+
     rolling_max_21 = df["close"].rolling(21, min_periods=1).max()
-    rolling_max_63 = df["close"].rolling(63, min_periods=1).max()
+    rolling_max_252 = df["close"].rolling(252, min_periods=1).max()
 
     df["drawdown_21d"]   = (df["close"] - rolling_max_21) / rolling_max_21
-    df["drawdown_63d"]   = (df["close"] - rolling_max_63) / rolling_max_63
-    df["mom_divergence"] = df["ret_5d"] - df["ret_21d"]
-    df["vol_spike"]      = df["vol_10d"] / df["vol_63d"]
+    df["dist_from_252h"] = (df["close"] - rolling_max_252) / rolling_max_252
 
-    # Handle numeric issues
-    cols = ["drawdown_21d", "drawdown_63d", "mom_divergence", "vol_spike"]
-    df[cols] = df[cols].replace([np.inf, -np.inf], np.nan)
+    if "ret_21d" not in df.columns:
+        df["ret_21d"] = df["close"].pct_change(21)
+
+    df["mom_divergence"] = df["ret_10d"] - df["ret_21d"]
+    df["vol_spike"]      = df["vol_21d"] / df["vol_21d"].rolling(63, min_periods=1).mean()
+
+    # TII (Trend Intensity)
+    sma21 = df["close"].rolling(21, min_periods=1).mean()
+    df["tii_21"] = df["close"].rolling(21).apply(
+        lambda x: (x > sma21.iloc[x.index[-1]]).sum() / 21.0, raw=False
+    )
+    # Vol of Vol
+    df["vol_of_vol_21"] = df["vol_21d"].rolling(21, min_periods=1).std()
+
+    cols_to_fix = ["drawdown_21d", "dist_from_252h", "mom_divergence", "vol_spike", "tii_21", "vol_of_vol_21", "vol_21d", "ret_21d"]
+    df[cols_to_fix] = df[cols_to_fix].replace([np.inf, -np.inf], np.nan).fillna(0)
     return df
 
 def assign_regime(probs, threshold=CONFIDENCE_TH):
@@ -118,9 +136,10 @@ def main():
 
     # 3. Load model and scaler
     try:
-        with open(MODEL_PATH, "rb") as f:
+        model_path = args.model
+        with open(model_path, "rb") as f:
             model, scaler = pickle.load(f)
-        print(f"Loaded model and scaler from {MODEL_PATH}")
+        print(f"Loaded model and scaler from {model_path}")
     except Exception as e:
         print(f"Error loading model: {e}")
         return

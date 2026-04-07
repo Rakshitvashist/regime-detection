@@ -342,6 +342,19 @@ fn compute_adx(data: &Vec<DailyBar>, window: usize) -> Vec<f64> {
 // -----------------------------
 // Z-SCORE
 // -----------------------------
+fn rolling_zscore(data: &Vec<f64>, window: usize) -> Vec<f64> {
+    let mut result = vec![f64::NAN; data.len()];
+    for i in window..data.len() {
+        let slice = &data[i - window..i];
+        let n = slice.iter().filter(|&&x| !x.is_nan()).count() as f64;
+        if n < 2.0 { continue; }
+        let mean = slice.iter().filter(|&&x| !x.is_nan()).sum::<f64>() / n;
+        let var = slice.iter().filter(|&&x| !x.is_nan()).map(|&x| (x - mean).powi(2)).sum::<f64>() / n;
+        let std = var.sqrt();
+        if std > 0.0 {
+            result[i] = (data[i] - mean) / std;
+        }
+    }
     result
 }
 
