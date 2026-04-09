@@ -9,6 +9,8 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
+from predict import StatefulRegimeFilter, calculate_checklist
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, default="output/features.json", help="Path to input features JSON")
@@ -174,26 +176,30 @@ def main():
     res_list = []
     # Reset index to ensure alignment with probs
     df = df.reset_index(drop=True)
+    
+    regime_filter = StatefulRegimeFilter(lock_days=5, checklist_threshold=4)
+    
     for i, row in df.iterrows():
         p = probs[i]
-        pred_idx = np.argmax(p)
-        pred_label = ["bear", "sideways", "bull"][pred_idx]
         
         # Override with 0.5 confidence threshold for decisive signals
         confidence = np.max(p)
-        if confidence < 0.5:
-            pred_label = "sideways"
+        
+        final_regime, is_locked, trigger = regime_filter.process(row, p)
             
         res_list.append({
             "date": str(row["date"].date()),
             "close": float(row["close"]),
             "symbol": args.symbol,
-            "regime": pred_label,
+            "regime": final_regime,
             "regime_actual": str(row["target"]),
             "confidence": float(confidence),
             "prob_bear": float(p[0]),
             "prob_sideways": float(p[1]),
             "prob_bull": float(p[2]),
+            "is_locked": is_locked,
+            "trigger": trigger,
+            "checklist": calculate_checklist(row, p),
             # Support metrics for dashboard plots
             "ret_21d": float(row.get("ret_21d", 0)) if pd.notna(row.get("ret_21d")) else 0,
             "ret_63d": float(row.get("ret_63d", 0)) if pd.notna(row.get("ret_63d")) else 0,

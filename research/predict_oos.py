@@ -24,6 +24,8 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report, accuracy_score
 
+from predict import StatefulRegimeFilter, calculate_checklist
+
 # Must match xgb_regime.py exactly
 XGB_FEATURES = [
     "ret_10d",
@@ -131,14 +133,13 @@ def main():
     correct = 0
     total_valid = 0
 
+    regime_filter = StatefulRegimeFilter(lock_days=5, checklist_threshold=4)
+
     for i, row in df_pred.iterrows():
         p = probs[i]
-        pred_idx = np.argmax(p)
         confidence = float(np.max(p))
-        pred_label = LABEL_MAP[pred_idx]
-        if confidence < 0.5:
-            pred_label = "sideways"
-            pred_idx = 1
+        
+        pred_label, is_locked, trigger = regime_filter.process(row, p)
 
         true_regime = row.get("true_regime_21")
         is_valid = pd.notna(true_regime) and true_regime in ["bear", "sideways", "bull"]
@@ -162,6 +163,9 @@ def main():
             "prob_sideways": float(p[1]),
             "prob_bull":    float(p[2]),
             "accuracy":     rolling_acc,
+            "is_locked":    is_locked,
+            "trigger":      trigger,
+            "checklist":    calculate_checklist(row, p),
             # Dashboard metrics
             "ret_21d":    float(row.get("ret_21d", 0)) if pd.notna(row.get("ret_21d")) else 0,
             "ret_63d":    float(row.get("ret_63d", 0)) if pd.notna(row.get("ret_63d")) else 0,

@@ -20,6 +20,81 @@ MODEL_PATH    = "output/xgb_model.pkl"
 OUTPUT_PATH   = "output/regime_ml.json"
 CONFIDENCE_TH = 0.65
 
+class StatefulRegimeFilter:
+    def __init__(self, lock_days=5, checklist_threshold=4):
+        self.current_regime = "sideways"
+        self.lock_remaining = 0
+        self.candidate = None
+        self.consecutive_days = 0
+        self.lock_days = lock_days
+        self.checklist_threshold = checklist_threshold
+
+    def process(self, row, raw_probs):
+        raw_confidence = float(np.max(raw_probs))
+        raw_label = ["bear", "sideways", "bull"][int(np.argmax(raw_probs))]
+
+        # Exclude ml_confidence from score
+        bull_score = sum([
+            bool(row.get("ret_21d", 0) > 0.05),
+            bool(row.get("ret_63d", 0) > 0.08),
+            bool(row.get("vol_21d", 0) < row.get("vol_63d", 0)),
+            bool(row.get("vol_ratio", 0) < 0.90),
+            bool(row.get("skew_21d", 0) > -0.5),
+            bool(row.get("ema_gap", 0) > 0),
+            bool(row.get("macd_h", 0) > 0),
+            bool(50 <= row.get("rsi_14", 0) <= 70)
+        ])
+        bear_score = sum([
+            bool(row.get("ret_21d", 0) < -0.05),
+            bool(row.get("ret_63d", 0) < -0.08),
+            bool(row.get("vol_21d", 0) > (row.get("vol_63d", 0) * 1.3)),
+            bool(row.get("skew_21d", 0) < -1.0),
+            bool(row.get("ema_gap", 0) < 0),
+            bool(row.get("macd_h", 0) < 0),
+            bool(row.get("rsi_14", 0) < 40)
+        ])
+
+        candidate = "sideways"
+        if bull_score > self.checklist_threshold:
+            candidate = "bull"
+        elif bear_score > self.checklist_threshold:
+            candidate = "bear"
+            
+        trigger = "None"
+        
+        if self.lock_remaining > 0:
+            self.lock_remaining -= 1
+            self.candidate = None
+            self.consecutive_days = 0
+        else:
+            if raw_confidence > 0.90:
+                if raw_label != self.current_regime:
+                    self.current_regime = raw_label
+                    self.lock_remaining = self.lock_days - 1
+                    trigger = "Immediate (>0.90)"
+                    self.candidate = None
+                    self.consecutive_days = 0
+            else:
+                if candidate == self.current_regime:
+                    self.candidate = None
+                    self.consecutive_days = 0
+                else:
+                    if candidate == self.candidate:
+                        self.consecutive_days += 1
+                        if self.consecutive_days >= 5:
+                            self.current_regime = candidate
+                            self.lock_remaining = self.lock_days - 1
+                            trigger = "Consensus (5-Day)"
+                            self.candidate = None
+                            self.consecutive_days = 0
+                    else:
+                        self.candidate = candidate
+                        self.consecutive_days = 1
+
+        is_locked = self.lock_remaining > 0 or trigger != "None"
+        return self.current_regime, is_locked, trigger
+
+
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default="output/features.json")
@@ -173,6 +248,8 @@ def main():
     correct_count = 0
     total_valid_for_acc = 0
     
+    regime_filter = StatefulRegimeFilter(lock_days=5, checklist_threshold=4)
+    
     for i, row in df.iterrows():
         date_str = str(row["date"])
         if " " in date_str:
@@ -200,17 +277,22 @@ def main():
             "prob_bull": 0.0,
             "confidence": 0.0,
             "accuracy": None,
+            "is_locked": False,
+            "trigger": "None",
             "checklist": None
         }
         
         if i in df_pred.index:
             p = probs[prob_idx]
-            pred_regime = assign_regime(p)
+            final_regime, is_locked, trigger = regime_filter.process(row, p)
+            
             out_row["prob_bear"] = float(p[0])
             out_row["prob_sideways"] = float(p[1])
             out_row["prob_bull"] = float(p[2])
             out_row["confidence"] = float(np.max(p))
-            out_row["regime"] = pred_regime
+            out_row["regime"] = final_regime
+            out_row["is_locked"] = is_locked
+            out_row["trigger"] = trigger
             out_row["checklist"] = calculate_checklist(row, p)
             prob_idx += 1
             
