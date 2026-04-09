@@ -101,8 +101,9 @@ def add_structural_features(df):
 
     # TII (Trend Intensity)
     sma21 = df["close"].rolling(21, min_periods=1).mean()
+    # Use loc for label-based indexing to ensure alignment with sma21
     df["tii_21"] = df["close"].rolling(21).apply(
-        lambda x: (x > sma21.iloc[x.index[-1]]).sum() / 21.0, raw=False
+        lambda x: (x > sma21.loc[x.index[-1]]).sum() / 21.0, raw=False
     )
     # Vol of Vol
     df["vol_of_vol_21"] = df["vol_21d"].rolling(21, min_periods=1).std()
@@ -190,6 +191,8 @@ def main():
             "rsi_14": float(row["rsi_14"]) if pd.notna(row["rsi_14"]) else 50.0,
             "macd_h": float(row["macd_h"]) if pd.notna(row["macd_h"]) else 0.0,
             "ema_gap": float(row["ema_gap"]) if pd.notna(row["ema_gap"]) else 0.0,
+            "tii_21": float(row["tii_21"]) if pd.notna(row["tii_21"]) else 0.0,
+            "vol_of_vol_21": float(row["vol_of_vol_21"]) if pd.notna(row["vol_of_vol_21"]) else 0.0,
             "regime": None,
             "regime_actual": str(row["true_regime"]) if pd.notna(row["true_regime"]) else None,
             "prob_bear": 0.0,
@@ -223,7 +226,7 @@ def main():
     with open(save_path, "w") as f:
         json.dump(res, f, indent=4)
         
-    print(f"✅ Prediction Complete for {args.symbol} -> Saved to {save_path}")
+    print(f"[OK] Prediction Complete for {args.symbol} -> Saved to {save_path}")
 
 if __name__ == "__main__":
     main()

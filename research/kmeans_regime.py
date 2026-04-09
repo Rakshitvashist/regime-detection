@@ -1,24 +1,30 @@
 import json
 import pandas as pd
 import numpy as np
+import argparse
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
-
-INPUT_PATH = "../output/features.json"
-OUTPUT_PATH = "../output/regime_clustered.json"
-
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", type=str, default="output/features.json", help="Path to input features JSON")
+    parser.add_argument("--output", type=str, default="output/regime_clustered.json", help="Path to save clustered regimes")
+    parser.add_argument("--symbol", type=str, default="NIFTY", help="Symbol name for the output metadata")
+    return parser.parse_args()
 
 def main():
+    args = parse_args()
+    
     # -----------------------------
     # LOAD DATA
     # -----------------------------
-    with open(INPUT_PATH, "r") as f:
+    with open(args.input, "r") as f:
         data = json.load(f)
 
     df = pd.DataFrame(data)
-    print(f"Loaded {len(df)} rows")
+    print(f"--- Clustering Regime: {args.symbol} ---")
+    print(f"Loaded {len(df)} rows from {args.input}")
 
     # -----------------------------
     # REQUIRED FEATURES
@@ -37,6 +43,10 @@ def main():
     # CLEAN DATA
     # -----------------------------
     df_clean = df.dropna(subset=required_cols).copy()
+    if df_clean.empty:
+        print("❌ Error: No clean data for clustering.")
+        return
+        
     print(f"After cleaning: {len(df_clean)} rows")
 
     # -----------------------------
@@ -124,7 +134,7 @@ def main():
 
     for _, row in df.iterrows():
         output.append({
-            "date": row["date"],
+            "date": str(row["date"]),
             "close": row["close"],
             "ret_21d": row["ret_21d"],
             "vol_ratio": row["vol_ratio"],
@@ -132,10 +142,10 @@ def main():
             "regime": row["regime_label"]
         })
 
-    with open(OUTPUT_PATH, "w") as f:
+    with open(args.output, "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"\nSaved clustered regimes to {OUTPUT_PATH} 🚀")
+    print(f"[OK] Saved clustered regimes to {args.output} [DONE]")
 
     # -----------------------------
     # DEBUG INFO
@@ -145,8 +155,7 @@ def main():
 
     print("\nCluster Mapping (reference only):")
     for k, v in mapping.items():
-        print(f"Cluster {k} → {v}")
-
+        print(f"Cluster {k} -> {v}")
 
 if __name__ == "__main__":
-    main()
+    main()

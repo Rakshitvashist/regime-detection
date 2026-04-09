@@ -11,7 +11,7 @@ use std::io::Write;
 // -----------------------------
 pub fn save_to_json(features: &Vec<FeatureRow>, symbol: &str) {
     let json = serde_json::to_string_pretty(features).unwrap();
-    let filename = format!("../output/features_{}.json", symbol);
+    let filename = format!("output/features_{}.json", symbol);
     let mut file = File::create(filename).unwrap();
     file.write_all(json.as_bytes()).unwrap();
 }
@@ -435,7 +435,7 @@ pub fn save_latest_snapshot(features: &Vec<FeatureRow>, symbol: &str) {
         "regime": regime
     });
 
-    let filename = format!("../output/regime_snapshot_{}.json", symbol);
+    let filename = format!("output/regime_snapshot_{}.json", symbol);
     std::fs::write(
         filename,
         serde_json::to_string_pretty(&output).unwrap()
@@ -461,7 +461,7 @@ pub fn save_regime_history(features: &Vec<FeatureRow>, symbol: &str) {
         }));
     }
 
-    let filename = format!("../output/regime_history_{}.json", symbol);
+    let filename = format!("output/regime_history_{}.json", symbol);
     std::fs::write(
         filename,
         serde_json::to_string_pretty(&out).unwrap()

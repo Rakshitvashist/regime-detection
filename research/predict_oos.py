@@ -69,7 +69,7 @@ def add_structural_features(df: pd.DataFrame) -> pd.DataFrame:
 
     sma21 = df["close"].rolling(21, min_periods=1).mean()
     df["tii_21"] = df["close"].rolling(21).apply(
-        lambda x: (x > sma21.iloc[x.index[-1]]).sum() / 21.0, raw=False
+        lambda x: (x > sma21.loc[x.index[-1]]).sum() / 21.0, raw=False
     )
     df["vol_of_vol_21"] = df["vol_21d"].rolling(21, min_periods=1).std()
 
@@ -91,7 +91,7 @@ def main():
     # Load model
     with open(args.model, "rb") as f:
         model, scaler = pickle.load(f)
-    print(f"✓ Loaded model from {args.model}")
+    print(f"[OK] Loaded model from {args.model}")
 
     # Load target features
     with open(args.input) as f:
@@ -99,14 +99,14 @@ def main():
     df = pd.DataFrame(raw)
     df["date"] = pd.to_datetime(df["date"])
     df = df.sort_values("date").reset_index(drop=True)
-    print(f"✓ Loaded {len(df)} rows | {df['date'].min().date()} → {df['date'].max().date()}")
+    print(f"[OK] Loaded {len(df)} rows | {df['date'].min().date()} -> {df['date'].max().date()}")
 
     # Build structural features
     df = add_structural_features(df)
 
     # Filter rows with all features
     df_pred = df.dropna(subset=XGB_FEATURES).copy().reset_index(drop=True)
-    print(f"✓ {len(df_pred)} rows with complete features")
+    print(f"[OK] {len(df_pred)} rows with complete features")
 
     # Scale with the SOURCE instrument's scaler (critical — same scaler as training)
     X = scaler.transform(df_pred[XGB_FEATURES].values)
@@ -124,7 +124,7 @@ def main():
         df_pred = df_pred.merge(truth_df[["date", "true_regime_21"]], on="date", how="left")
         accuracy_data = True
     except Exception as e:
-        print(f"⚠ Could not load ground truth: {e}")
+        print(f"[WARN] Could not load ground truth: {e}")
         df_pred["true_regime_21"] = None
 
     results = []
@@ -187,11 +187,11 @@ def main():
         y_pred = [r["regime"] for r in valid_results]
         oos_acc = accuracy_score(y_true, y_pred)
         print(f"\n{'='*60}")
-        print(f"  OOS ACCURACY ({args.trained_on} → {args.symbol}): {oos_acc:.4f} ({oos_acc*100:.1f}%)")
+        print(f"  OOS ACCURACY ({args.trained_on} -> {args.symbol}): {oos_acc:.4f} ({oos_acc*100:.1f}%)")
         print(f"{'='*60}")
         print(classification_report(y_true, y_pred, target_names=["bear", "sideways", "bull"], zero_division=0))
 
-    print(f"\n✅ Saved {len(results)} rows → {args.json_out}")
+    print(f"\n[OK] Saved {len(results)} rows -> {args.json_out}")
 
 
 if __name__ == "__main__":

@@ -214,7 +214,7 @@ def main():
     with open(args.json_out, "w") as f:
         json.dump(res_list, f, indent=4)
         
-    print(f"✅ Training Complete for {args.symbol} -> {args.json_out}")
+    print(f"[OK] Training Complete for {args.symbol} -> {args.json_out}")
 
 if __name__ == "__main__":
     main()
