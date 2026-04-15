@@ -3,6 +3,42 @@ use chrono::NaiveDate;
 use std::fs;
 
 
+pub fn load_daily_file(path: &str) -> Vec<DailyBar> {
+    let mut data = Vec::new();
+    let file_data = std::fs::read_to_string(path).expect("Failed to read daily CSV file");
+
+    for (i, line) in file_data.lines().enumerate() {
+        if i == 0 || line.trim().is_empty() { continue; }
+
+        let parts: Vec<&str> = line.split(',').collect();
+        // Expected columns: time, open, high, low, close
+        if parts.len() < 5 { continue; }
+
+        let date = match NaiveDate::parse_from_str(parts[0], "%Y-%m-%d") {
+            Ok(d) => d,
+            Err(_) => continue,
+        };
+
+        let o = parts[1].parse::<f64>().ok();
+        let h = parts[2].parse::<f64>().ok();
+        let l = parts[3].parse::<f64>().ok();
+        let c = parts[4].parse::<f64>().ok();
+
+        if let (Some(o), Some(h), Some(l), Some(c)) = (o, h, l, c) {
+            data.push(DailyBar {
+                date,
+                open: o,
+                high: h,
+                low: l,
+                close: c,
+            });
+        }
+    }
+
+    data.sort_by_key(|x| x.date);
+    data
+}
+
 pub fn load_folder(path: &str) -> Vec<DailyBar> {
     let mut data = Vec::new();
 

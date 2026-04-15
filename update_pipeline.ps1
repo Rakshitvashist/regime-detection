@@ -10,21 +10,21 @@ Write-Host "--- Starting Regime Detection Update Pipeline ---" -ForegroundColor 
 
 # 1. NIFTY
 Write-Host "`n[1/3] Processing NIFTY..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "$DataPath\NIFTY\spot" NIFTY
+cargo run --manifest-path core/Cargo.toml --release -- "NSE_NIFTY, 1D.csv" NIFTY "2019-01-01"
 & $Python research/kmeans_regime.py --input output/features_NIFTY.json --output output/regime_clustered_NIFTY.json --symbol NIFTY
 & $Python research/xgb_regime.py --input output/features_NIFTY.json --model-out output/xgb_model_NIFTY.pkl --symbol NIFTY
 & $Python predict.py --input output/features_NIFTY.json --model output/xgb_model_NIFTY.pkl --symbol NIFTY
 
 # 2. BANKNIFTY
 Write-Host "`n[2/3] Processing BANKNIFTY..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "$DataPath\BANKNIFTY\spot" BANKNIFTY
+cargo run --manifest-path core/Cargo.toml --release -- "NSE_BANKNIFTY, 1D.csv" BANKNIFTY "2019-01-01"
 & $Python research/kmeans_regime.py --input output/features_BANKNIFTY.json --output output/regime_clustered_BANKNIFTY.json --symbol BANKNIFTY
 & $Python research/xgb_regime.py --input output/features_BANKNIFTY.json --model-out output/xgb_model_BANKNIFTY.pkl --symbol BANKNIFTY
 & $Python predict.py --input output/features_BANKNIFTY.json --model output/xgb_model_BANKNIFTY.pkl --symbol BANKNIFTY
 
 # 3. NIFTY_500
 Write-Host "`n[3/3] Processing NIFTY_500..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "$DataPath\NIFTY 500\spot" NIFTY_500
+cargo run --manifest-path core/Cargo.toml --release -- "NSE_CNX500, 1D.csv" NIFTY_500 "2019-01-01"
 & $Python research/kmeans_regime.py --input output/features_NIFTY_500.json --output output/regime_clustered_NIFTY_500.json --symbol NIFTY_500
 & $Python research/xgb_regime.py --input output/features_NIFTY_500.json --model-out output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
 & $Python predict.py --input output/features_NIFTY_500.json --model output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
