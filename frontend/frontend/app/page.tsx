@@ -59,6 +59,12 @@ export default function Page() {
     { id: "NIFTY500_on_BANKNIFTY",  label: "NIFTY 500 → BANK NIFTY",file: "regime_NIFTY500_on_BANKNIFTY.json",  trainedOn: "NIFTY_500" },
     { id: "BANKNIFTY_on_NIFTY",     label: "BANK NIFTY → NIFTY 50", file: "regime_BANKNIFTY_on_NIFTY.json",     trainedOn: "BANKNIFTY" },
     { id: "BANKNIFTY_on_NIFTY500",  label: "BANK NIFTY → NIFTY 500",file: "regime_BANKNIFTY_on_NIFTY500.json",  trainedOn: "BANKNIFTY" },
+    { id: "NIFTY_on_CRUDE",         label: "NIFTY → Crude Oil",     file: "regime_NIFTY_on_CRUDE.json",         trainedOn: "NIFTY" },
+    { id: "NIFTY_on_WTI",           label: "NIFTY → WTI",           file: "regime_NIFTY_on_WTI.json",           trainedOn: "NIFTY" },
+    { id: "NIFTY_on_USDINR",        label: "NIFTY → USDINR",        file: "regime_NIFTY_on_USDINR.json",        trainedOn: "NIFTY" },
+    { id: "NIFTY500_on_CRUDE",      label: "NIFTY 500 → Crude Oil", file: "regime_NIFTY500_on_CRUDE.json",      trainedOn: "NIFTY_500" },
+    { id: "NIFTY500_on_WTI",        label: "NIFTY 500 → WTI",       file: "regime_NIFTY500_on_WTI.json",       trainedOn: "NIFTY_500" },
+    { id: "NIFTY500_on_USDINR",     label: "NIFTY 500 → USDINR",    file: "regime_NIFTY500_on_USDINR.json",    trainedOn: "NIFTY_500" },
   ];
   const ALL_INSTRUMENTS = [...IN_SAMPLE_INSTRUMENTS, ...OOS_INSTRUMENTS];
   const isOOS = OOS_INSTRUMENTS.some(i => i.id === primaryFile);

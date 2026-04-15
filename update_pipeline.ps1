@@ -29,10 +29,25 @@ cargo run --manifest-path core/Cargo.toml --release -- "NSE_CNX500, 1D.csv" NIFT
 & $Python research/xgb_regime.py --input output/features_NIFTY_500.json --model-out output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
 & $Python predict.py --input output/features_NIFTY_500.json --model output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
 
-# 4. Cross-Instrument (OOS) Tests
-Write-Host "`n--- Updating OOS Validation Pairs ---" -ForegroundColor Cyan
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_BANKNIFTY.json --symbol BANKNIFTY --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_BANKNIFTY.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_NIFTY_500.json --symbol NIFTY_500 --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_NIFTY500.json
+# 4. Cross-Asset OOS Experiments (Oil & Forex)
+Write-Host "`n[4/4] Processing Cross-Asset OOS (Oil & Forex)..." -ForegroundColor Yellow
+
+# Generate Features
+cargo run --manifest-path core/Cargo.toml --release -- "MCX_CRUDEOIL1!, 1D.csv" CRUDE "2019-01-01"
+cargo run --manifest-path core/Cargo.toml --release -- "CFI_WTI, 1D.csv" WTI "2019-01-01"
+cargo run --manifest-path core/Cargo.toml --release -- "FX_IDC_USDINR, 1D.csv" USDINR "2019-01-01"
+
+# Predictions: NIFTY model on Oil & FX
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_CRUDE.json --symbol CRUDE --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_CRUDE.json
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_WTI.json --symbol WTI --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_WTI.json
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_USDINR.json --symbol USDINR --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_USDINR.json
+
+# Predictions: NIFTY_500 model on Oil & FX
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_CRUDE.json --symbol CRUDE --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_CRUDE.json
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_WTI.json --symbol WTI --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_WTI.json
+& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_USDINR.json --symbol USDINR --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_USDINR.json
+
+# --- Deploy & Commit ---
 & $Python research/predict_oos.py --model output/xgb_model_BANKNIFTY.pkl --input output/features_NIFTY.json --symbol NIFTY --trained-on BANKNIFTY --json-out frontend/frontend/public/data/regime_BANKNIFTY_on_NIFTY.json
 & $Python research/predict_oos.py --model output/xgb_model_BANKNIFTY.pkl --input output/features_NIFTY_500.json --symbol NIFTY_500 --trained-on BANKNIFTY --json-out frontend/frontend/public/data/regime_BANKNIFTY_on_NIFTY500.json
 & $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_NIFTY.json --symbol NIFTY --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_NIFTY.json
