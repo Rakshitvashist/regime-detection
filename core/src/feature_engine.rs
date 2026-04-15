@@ -45,8 +45,8 @@ pub fn build_features(data: &Vec<DailyBar>, symbol: &str) -> Vec<FeatureRow> {
     // -----------------------------
     // DISTRIBUTION
     // -----------------------------
-    let skew_21d = rolling_skew(&closes, 21);
-    let kurt_21d = rolling_kurt(&closes, 21);
+    let skew_21d = rolling_skew(&ret_1d, 21); // Correct: Use Returns
+    let kurt_21d = rolling_kurt(&ret_1d, 21); // Correct: Use Returns
 
     // -----------------------------
     // TECHNICAL
@@ -150,10 +150,13 @@ fn compute_ratio(a: &Vec<f64>, b: &Vec<f64>) -> Vec<f64> {
 // -----------------------------
 fn rolling_skew(data: &Vec<f64>, window: usize) -> Vec<f64> {
     let mut result = vec![f64::NAN; data.len()];
+    if window < 3 { return result; }
+
+    let n = window as f64;
 
     for i in window..data.len() {
         let slice = &data[i - window..i];
-        let mean = slice.iter().sum::<f64>() / window as f64;
+        let mean = slice.iter().sum::<f64>() / n;
 
         let mut m2 = 0.0;
         let mut m3 = 0.0;
@@ -164,11 +167,15 @@ fn rolling_skew(data: &Vec<f64>, window: usize) -> Vec<f64> {
             m3 += d.powi(3);
         }
 
-        m2 /= window as f64;
-        m3 /= window as f64;
+        let var = m2 / (n - 1.0);
+        let std = var.sqrt();
 
-        if m2 > 0.0 {
-            result[i] = m3 / m2.powf(1.5);
+        if std > 1e-9 {
+            // Adjusted Fisher-Pearson skewness
+            let factor = (n * (n - 1.0).sqrt()) / (n - 2.0);
+            result[i] = factor * (m3 / m2.powf(1.5));
+        } else {
+            result[i] = 0.0;
         }
     }
 
@@ -180,10 +187,13 @@ fn rolling_skew(data: &Vec<f64>, window: usize) -> Vec<f64> {
 // -----------------------------
 fn rolling_kurt(data: &Vec<f64>, window: usize) -> Vec<f64> {
     let mut out = vec![f64::NAN; data.len()];
+    if window < 4 { return out; }
+
+    let n = window as f64;
 
     for i in window..data.len() {
         let slice = &data[i - window..i];
-        let mean = slice.iter().sum::<f64>() / window as f64;
+        let mean = slice.iter().sum::<f64>() / n;
 
         let mut m2 = 0.0;
         let mut m4 = 0.0;
@@ -194,11 +204,17 @@ fn rolling_kurt(data: &Vec<f64>, window: usize) -> Vec<f64> {
             m4 += d.powi(4);
         }
 
-        m2 /= window as f64;
-        m4 /= window as f64;
+        // Standard Pearson Kurtosis (Excess kurtosis is usually preferred, but we'll stick to raw to match skew logic)
+        // Population kurtosis for simplicity, but using window-1 for variance
+        let var = m2 / (n - 1.0);
+        let std = var.sqrt();
 
-        if m2 > 0.0 {
-            out[i] = m4 / m2.powi(2);
+        if std > 1e-9 {
+            let m2_pop = m2 / n;
+            let m4_pop = m4 / n;
+            out[i] = m4_pop / m2_pop.powi(2);
+        } else {
+            out[i] = 3.0; // Normal distribution kurtosis
         }
     }
 
@@ -274,6 +290,7 @@ fn compute_macd_hist(prices: &Vec<f64>) -> Vec<f64> {
 // -----------------------------
 fn compute_bb_pct(prices: &Vec<f64>, window: usize) -> Vec<f64> {
     let mut out = vec![f64::NAN; prices.len()];
+    if window < 2 { return out; }
 
     for i in window..prices.len() {
         let slice = &prices[i - window..i];
@@ -281,7 +298,7 @@ fn compute_bb_pct(prices: &Vec<f64>, window: usize) -> Vec<f64> {
 
         let std = (slice.iter()
             .map(|x| (x - mean).powi(2))
-            .sum::<f64>() / window as f64).sqrt();
+            .sum::<f64>() / (window - 1) as f64).sqrt(); // N-1
 
         let upper = mean + 2.0 * std;
         let lower = mean - 2.0 * std;
@@ -346,12 +363,16 @@ fn rolling_zscore(data: &Vec<f64>, window: usize) -> Vec<f64> {
     let mut result = vec![f64::NAN; data.len()];
     for i in window..data.len() {
         let slice = &data[i - window..i];
-        let n = slice.iter().filter(|&&x| !x.is_nan()).count() as f64;
+        let valid_points: Vec<f64> = slice.iter().cloned().filter(|&x| !x.is_nan()).collect();
+        let n = valid_points.len() as f64;
+        
         if n < 2.0 { continue; }
-        let mean = slice.iter().filter(|&&x| !x.is_nan()).sum::<f64>() / n;
-        let var = slice.iter().filter(|&&x| !x.is_nan()).map(|&x| (x - mean).powi(2)).sum::<f64>() / n;
+        
+        let mean = valid_points.iter().sum::<f64>() / n;
+        let var = valid_points.iter().map(|&x| (x - mean).powi(2)).sum::<f64>() / (n - 1.0); // N-1
         let std = var.sqrt();
-        if std > 0.0 {
+        
+        if std > 1e-9 {
             result[i] = (data[i] - mean) / std;
         }
     }
