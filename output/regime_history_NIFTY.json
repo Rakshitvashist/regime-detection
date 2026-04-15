@@ -14342,5 +14342,21 @@
     "ret_21d": -0.02857446443312872,
     "symbol": "NIFTY",
     "vol_ratio": 1.4150985735557042
+  },
+  {
+    "close": 24051.8,
+    "date": "2026-04-10",
+    "regime": "sideways_high_vol",
+    "ret_21d": 0.0018410836568421018,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.4084597653144524
+  },
+  {
+    "close": 23818.9,
+    "date": "2026-04-13",
+    "regime": "sideways_high_vol",
+    "ret_21d": -0.019239360705587294,
+    "symbol": "NIFTY",
+    "vol_ratio": 1.3760139023307285
   }
 ]

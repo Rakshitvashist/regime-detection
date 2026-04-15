@@ -2068,7 +2068,7 @@
     "close": 9987.1,
     "ret_21d": 0.008634968085965866,
     "vol_ratio": 1.136464193517903,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -9156,7 +9156,7 @@
     "close": 16900.85,
     "ret_21d": -0.0013413261402011045,
     "vol_ratio": 0.9996022640411053,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -10532,7 +10532,7 @@
     "close": 20635.45,
     "ret_21d": 0.0011109736543999382,
     "vol_ratio": 0.7119872872021101,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -12477,7 +12477,7 @@
     "ret_21d": 0.026832703803110203,
     "vol_ratio": 1.2011811771482113,
     "cluster": 2,
-    "regime": "sideways"
+    "regime": "bull"
   },
   {
     "date": "2025-05-05",
@@ -13428,7 +13428,7 @@
     "close": 23759.2,
     "ret_21d": 0.010475100902058054,
     "vol_ratio": 0.9457495402748455,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -13596,7 +13596,7 @@
     "close": 23783.3,
     "ret_21d": 0.001014343917303595,
     "vol_ratio": 0.8194948542705948,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -13780,7 +13780,7 @@
     "close": 23843.75,
     "ret_21d": 0.008618866328257146,
     "vol_ratio": 1.0670234456481584,
-    "cluster": 1,
+    "cluster": 2,
     "regime": "sideways"
   },
   {
@@ -14340,6 +14340,22 @@
     "close": 22029.0,
     "ret_21d": -0.020757069605862433,
     "vol_ratio": 1.399368238312102,
+    "cluster": 1,
+    "regime": "sideways"
+  },
+  {
+    "date": "2026-04-10",
+    "close": 22346.15,
+    "ret_21d": 0.013403263403263477,
+    "vol_ratio": 1.395238532280223,
+    "cluster": 1,
+    "regime": "sideways"
+  },
+  {
+    "date": "2026-04-13",
+    "close": 22167.85,
+    "ret_21d": -0.009160677250947602,
+    "vol_ratio": 1.3633792768268693,
     "cluster": 1,
     "regime": "sideways"
   }
