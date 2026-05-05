@@ -1,8 +1,8 @@
 {
-  "close": 24231.3,
-  "date": "2026-04-15",
-  "regime": "sideways_high_vol",
-  "ret_21d": 0.015270134098132049,
+  "close": 24032.80078125,
+  "date": "2026-05-05",
+  "regime": "bull_normal_vol",
+  "ret_21d": 0.059675316247975285,
   "symbol": "NIFTY",
-  "vol_ratio": 1.4063188306652359
+  "vol_ratio": 0.9139164419422247
 }

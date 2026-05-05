@@ -1,8 +1,8 @@
 {
-  "close": 8576.0,
-  "date": "2026-04-15",
-  "regime": "sideways_normal_vol",
-  "ret_21d": -0.016513761467889854,
+  "close": 104.08999633789062,
+  "date": "2026-05-05",
+  "regime": "bear_normal_vol",
+  "ret_21d": -0.07401483011447685,
   "symbol": "CRUDE",
-  "vol_ratio": 1.1910782690217825
+  "vol_ratio": 1.1313578430860485
 }

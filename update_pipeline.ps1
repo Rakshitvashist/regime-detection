@@ -4,7 +4,7 @@
 # ---------------------------------------------------------
 
 $DataPath = "D:\locale\data"
-$Python = ".\.venv\Scripts\python.exe"
+$Python = "python"
 
 Write-Host "--- Starting Regime Detection Update Pipeline ---" -ForegroundColor Cyan
 
