@@ -61,6 +61,6 @@ cargo run --manifest-path core/Cargo.toml --release -- "FX_IDC_USDINR, 1D.csv" U
 Write-Host "`n--- Pushing Updates to GitHub ---" -ForegroundColor Cyan
 git add .
 git commit -m "Manual pipeline update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-git push
+git push --set-upstream origin main
 
 Write-Host "`nPipeline completed successfully! [DONE]" -ForegroundColor Green
