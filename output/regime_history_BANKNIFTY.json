@@ -14464,11 +14464,19 @@
     "vol_ratio": 1.0055725182774222
   },
   {
-    "close": 56010.25,
+    "close": 55981.05078125,
     "date": "2026-05-06",
     "regime": "bull_normal_vol",
-    "ret_21d": 0.0865491403768277,
+    "ret_21d": 0.08598270144765885,
     "symbol": "BANKNIFTY",
     "vol_ratio": 0.9791858344789229
+  },
+  {
+    "close": 55998.1015625,
+    "date": "2026-05-07",
+    "regime": "bull_normal_vol",
+    "ret_21d": 0.06441851123372344,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 1.0060353838670204
   }
 ]
