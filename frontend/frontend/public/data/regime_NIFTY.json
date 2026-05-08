@@ -83258,5 +83258,51 @@
                 "ml_confidence": true
             }
         }
+    },
+    {
+        "date": "2026-05-08",
+        "symbol": "NIFTY",
+        "close": 24176.150390625,
+        "ret_21d": 0.0455161699048483,
+        "ret_63d": -0.03636142543152687,
+        "vol_21d": 0.18246844425941378,
+        "vol_63d": 0.20352165842917833,
+        "vol_ratio": 0.8965554116831714,
+        "skew_21d": 1.3407236434693297,
+        "rsi_14": 45.99854266579379,
+        "macd_h": 21.442073673992454,
+        "ema_gap": -0.008797613927636862,
+        "tii_21": 0.5238095238095238,
+        "vol_of_vol_21": 0.03944264887330326,
+        "regime": "bear",
+        "regime_actual": null,
+        "prob_bear": 0.7788651585578918,
+        "prob_sideways": 0.07629794627428055,
+        "prob_bull": 0.14483694732189178,
+        "confidence": 0.7788651585578918,
+        "accuracy": null,
+        "checklist": {
+            "bull": {
+                "momentum_21d": false,
+                "trend_63d": false,
+                "vol_stability": true,
+                "risk_cooling": true,
+                "tail_risk": true,
+                "ema_cross": false,
+                "macd_hist": true,
+                "rsi_healthy": false,
+                "ml_confidence": false
+            },
+            "bear": {
+                "momentum_21d": false,
+                "trend_63d": false,
+                "panic_vol": false,
+                "tail_crash": false,
+                "ema_death_cross": true,
+                "macd_hist_neg": false,
+                "rsi_weak": false,
+                "ml_confidence": true
+            }
+        }
     }
 ]
