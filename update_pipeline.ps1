@@ -4,13 +4,13 @@
 # ---------------------------------------------------------
 
 $DataPath = "D:\locale\data"
-$Python = "python"
+$Python = ".\.venv\Scripts\python.exe"
 
 Write-Host "--- Starting Regime Detection Update Pipeline ---" -ForegroundColor Cyan
 
 # 0. Fetch Latest Data
 Write-Host "`n[0/4] Fetching latest data from Yahoo Finance..." -ForegroundColor Yellow
-python fetch_data.py
+& $Python fetch_data.py
 
 # 1. NIFTY
 Write-Host "`n[1/4] Processing NIFTY..." -ForegroundColor Yellow
