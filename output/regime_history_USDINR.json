@@ -15304,11 +15304,27 @@
     "vol_ratio": 1.299651584749028
   },
   {
-    "close": 94.37300109863281,
+    "close": 94.42530059814453,
     "date": "2026-05-11",
     "regime": "sideways_high_vol",
-    "ret_21d": 0.02058183518723533,
+    "ret_21d": 0.02114741982023083,
     "symbol": "USDINR",
     "vol_ratio": 1.2761925401723615
+  },
+  {
+    "close": 95.39140319824219,
+    "date": "2026-05-12",
+    "regime": "sideways_high_vol",
+    "ret_21d": 0.009338882064333198,
+    "symbol": "USDINR",
+    "vol_ratio": 1.2787324613329523
+  },
+  {
+    "close": 95.54000091552734,
+    "date": "2026-05-13",
+    "regime": "sideways_normal_vol",
+    "ret_21d": 0.006247716427985939,
+    "symbol": "USDINR",
+    "vol_ratio": 1.01261658558458
   }
 ]
