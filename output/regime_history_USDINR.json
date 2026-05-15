@@ -15326,5 +15326,21 @@
     "ret_21d": 0.0072272367394525805,
     "symbol": "USDINR",
     "vol_ratio": 1.01261658558458
+  },
+  {
+    "close": 95.69580078125,
+    "date": "2026-05-14",
+    "regime": "sideways_normal_vol",
+    "ret_21d": 0.027160332067437176,
+    "symbol": "USDINR",
+    "vol_ratio": 1.0039134570475217
+  },
+  {
+    "close": 95.75299835205078,
+    "date": "2026-05-15",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.02533758101760597,
+    "symbol": "USDINR",
+    "vol_ratio": 0.6617292149594808
   }
 ]
