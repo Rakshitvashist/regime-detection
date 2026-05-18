@@ -14518,5 +14518,21 @@
     "ret_21d": -0.02654617776192625,
     "symbol": "BANKNIFTY",
     "vol_ratio": 0.6552861673529248
+  },
+  {
+    "close": 53710.3515625,
+    "date": "2026-05-15",
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.04603033628872888,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.6768587491942153
+  },
+  {
+    "close": 53178.80078125,
+    "date": "2026-05-18",
+    "regime": "bear_low_vol",
+    "ret_21d": -0.051841404284321935,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.656045130224916
   }
 ]

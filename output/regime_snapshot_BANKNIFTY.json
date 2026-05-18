@@ -1,8 +1,8 @@
 {
-  "close": 54128.94921875,
-  "date": "2026-05-14",
-  "regime": "sideways_low_vol",
-  "ret_21d": -0.02654617776192625,
+  "close": 53178.80078125,
+  "date": "2026-05-18",
+  "regime": "bear_low_vol",
+  "ret_21d": -0.051841404284321935,
   "symbol": "BANKNIFTY",
-  "vol_ratio": 0.6552861673529248
+  "vol_ratio": 0.656045130224916
 }
