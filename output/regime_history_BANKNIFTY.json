@@ -14528,11 +14528,19 @@
     "vol_ratio": 0.6768587491942153
   },
   {
-    "close": 53178.80078125,
+    "close": 53537.0,
     "date": "2026-05-18",
-    "regime": "bear_low_vol",
-    "ret_21d": -0.051841404284321935,
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.04545484303722813,
     "symbol": "BANKNIFTY",
     "vol_ratio": 0.656045130224916
+  },
+  {
+    "close": 53563.6484375,
+    "date": "2026-05-19",
+    "regime": "bear_low_vol",
+    "ret_21d": -0.053071929149863695,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.655807168799885
   }
 ]
