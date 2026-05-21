@@ -14536,11 +14536,27 @@
     "vol_ratio": 0.6783788110006045
   },
   {
-    "close": 23733.69921875,
+    "close": 23618.0,
     "date": "2026-05-19",
     "regime": "sideways_low_vol",
-    "ret_21d": -0.025452204816770685,
+    "ret_21d": -0.030203019997244396,
     "symbol": "NIFTY",
     "vol_ratio": 0.6792264197948233
+  },
+  {
+    "close": 23659.0,
+    "date": "2026-05-20",
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.02896999656026633,
+    "symbol": "NIFTY",
+    "vol_ratio": 0.6656592060223521
+  },
+  {
+    "close": 23790.55078125,
+    "date": "2026-05-21",
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.031983628354556926,
+    "symbol": "NIFTY",
+    "vol_ratio": 0.667429831711302
   }
 ]
