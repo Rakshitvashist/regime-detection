@@ -14526,5 +14526,29 @@
     "ret_21d": 0.005199263131622001,
     "symbol": "NIFTY_500",
     "vol_ratio": 0.6488746222506774
+  },
+  {
+    "close": 22897.19921875,
+    "date": "2026-05-26",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.014494802899237547,
+    "symbol": "NIFTY_500",
+    "vol_ratio": 0.6651209526863383
+  },
+  {
+    "close": 22967.400390625,
+    "date": "2026-05-27",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.006397503987528141,
+    "symbol": "NIFTY_500",
+    "vol_ratio": 0.6403999365550492
+  },
+  {
+    "close": 22822.5,
+    "date": "2026-05-29",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.002499402238523407,
+    "symbol": "NIFTY_500",
+    "vol_ratio": 0.622377027010422
   }
 ]
