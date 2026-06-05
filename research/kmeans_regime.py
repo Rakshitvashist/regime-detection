@@ -44,7 +44,7 @@ def main():
     # -----------------------------
     df_clean = df.dropna(subset=required_cols).copy()
     if df_clean.empty:
-        print("❌ Error: No clean data for clustering.")
+        print("[ERROR] No clean data for clustering.")
         return
         
     print(f"After cleaning: {len(df_clean)} rows")
@@ -94,20 +94,39 @@ def main():
     df_clean["regime_kmeans"] = df_clean["cluster"].map(mapping)
 
     # -----------------------------
-    # ✅ METHOD 1: PERCENTILE OVERRIDE
+    # ✅ PERCENTILE OVERRIDE — CAUSAL (no look-ahead)
     # -----------------------------
-    bear_threshold = df_clean["ret_21d"].quantile(0.20)   # bottom 20%
-    bull_threshold = df_clean["ret_21d"].quantile(0.60)   # top 40%
+    # The thresholds are computed on an EXPANDING window so the label at time t
+    # only ever uses returns observed up to and including t. The previous
+    # version called .quantile() on the full sample, which leaked the future
+    # distribution into past labels and made the labels change every time new
+    # data arrived (non-reproducible backtests).
+    MIN_HISTORY = 252  # ~1 trading year before we trust the quantiles
 
-    def refined_regime(row):
-        if row["ret_21d"] <= bear_threshold:
+    df_clean = df_clean.sort_values("date").reset_index(drop=True)
+    expanding_bear = (
+        df_clean["ret_21d"].expanding(min_periods=MIN_HISTORY).quantile(0.20)
+    )
+    expanding_bull = (
+        df_clean["ret_21d"].expanding(min_periods=MIN_HISTORY).quantile(0.60)
+    )
+
+    def refined_regime(i, ret):
+        bt, bl = expanding_bear.iloc[i], expanding_bull.iloc[i]
+        if pd.isna(bt) or pd.isna(bl):
+            return None  # insufficient history — leave unlabeled
+        if ret <= bt:
             return "bear"
-        elif row["ret_21d"] >= bull_threshold:
+        elif ret >= bl:
             return "bull"
         else:
             return "sideways"
 
-    df_clean["regime_label"] = df_clean.apply(refined_regime, axis=1)
+    df_clean["regime_label"] = [
+        refined_regime(i, r) for i, r in enumerate(df_clean["ret_21d"])
+    ]
+    # Drop the warm-up rows that have no causal label.
+    df_clean = df_clean.dropna(subset=["regime_label"]).reset_index(drop=True)
 
     # -----------------------------
     # DEBUG DISTRIBUTION
@@ -119,13 +138,11 @@ def main():
     print(df_clean["regime_label"].value_counts(normalize=True))
 
     # -----------------------------
-    # MERGE BACK
+    # MERGE BACK (by date — df_clean was re-indexed above)
     # -----------------------------
-    df["cluster"] = np.nan
-    df["regime_label"] = None
-
-    df.loc[df_clean.index, "cluster"] = df_clean["cluster"]
-    df.loc[df_clean.index, "regime_label"] = df_clean["regime_label"]
+    label_by_date = df_clean.set_index("date")[["cluster", "regime_label"]]
+    df["cluster"] = df["date"].map(label_by_date["cluster"])
+    df["regime_label"] = df["date"].map(label_by_date["regime_label"])
 
     # -----------------------------
     # SAVE OUTPUT

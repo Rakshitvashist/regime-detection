@@ -63,13 +63,6 @@ pub fn build_features(data: &Vec<DailyBar>, symbol: &str) -> Vec<FeatureRow> {
     // -----------------------------
     let ret_z21 = rolling_zscore(&ret_21d, 126);
 
-    // -----------------------------
-    // NICHE
-    // -----------------------------
-    let max_252 = rolling_max(&closes, 252);
-    let sma_21 = rolling_sma(&closes, 21);
-    let vov_21 = rolling_std(&vol_21d, 21);
-
     let mut features = Vec::with_capacity(data.len());
 
     for i in 0..data.len() {
@@ -113,36 +106,10 @@ pub fn build_features(data: &Vec<DailyBar>, symbol: &str) -> Vec<FeatureRow> {
 
             // mean reversion
             ret_z21: ret_z21[i],
-
-            // niche
-            dist_from_252h: if max_252[i] > 0.0 { (closes[i] - max_252[i]) / max_252[i] } else { 0.0 },
-            tii_21: {
-                if i < 21 { 0.0 } else {
-                    let mut count = 0;
-                    for j in (i-20)..=i {
-                       if closes[j] > sma_21[i] { count += 1; }
-                    }
-                    count as f64 / 21.0
-                }
-            },
-            vol_of_vol_21: vov_21[i],
         });
     }
 
     features
-}
-
-// -----------------------------
-// 🔥 RATIO
-// -----------------------------
-fn compute_ratio(a: &Vec<f64>, b: &Vec<f64>) -> Vec<f64> {
-    let mut out = vec![f64::NAN; a.len()];
-    for i in 0..a.len() {
-        if b[i] != 0.0 {
-            out[i] = a[i] / b[i];
-        }
-    }
-    out
 }
 
 // -----------------------------
@@ -330,27 +297,74 @@ fn compute_ema_gap(prices: &Vec<f64>, short: usize, long: usize) -> Vec<f64> {
 }
 
 // -----------------------------
-// ADX
+// ADX (Wilder's Average Directional Index)
 // -----------------------------
-fn compute_adx(data: &Vec<DailyBar>, window: usize) -> Vec<f64> {
-    let mut out = vec![f64::NAN; data.len()];
+// The previous implementation here was just an average True Range (ATR) and
+// only *named* `adx` — it carried no directional-movement information. This is
+// the real thing: per-bar +DM / -DM / TR, Wilder-smoothed into +DI / -DI, then
+// DX = 100 * |+DI - -DI| / (+DI + -DI), and finally ADX = Wilder-smoothed DX.
+// Output is on the conventional 0..100 trend-strength scale.
+fn compute_adx(data: &Vec<DailyBar>, period: usize) -> Vec<f64> {
+    let n = data.len();
+    let mut out = vec![f64::NAN; n];
+    if n <= 2 * period { return out; }
 
-    for i in window..data.len() {
-        let mut tr_sum = 0.0;
+    let mut tr = vec![0.0; n];
+    let mut plus_dm = vec![0.0; n];
+    let mut minus_dm = vec![0.0; n];
+    for i in 1..n {
+        let up_move = data[i].high - data[i - 1].high;
+        let down_move = data[i - 1].low - data[i].low;
+        plus_dm[i] = if up_move > down_move && up_move > 0.0 { up_move } else { 0.0 };
+        minus_dm[i] = if down_move > up_move && down_move > 0.0 { down_move } else { 0.0 };
 
-        for j in (i - window + 1)..=i {
-            let high = data[j].high;
-            let low = data[j].low;
-            let prev_close = data[j - 1].close;
+        let high = data[i].high;
+        let low = data[i].low;
+        let prev_close = data[i - 1].close;
+        tr[i] = (high - low)
+            .max((high - prev_close).abs())
+            .max((low - prev_close).abs());
+    }
 
-            let tr = (high - low)
-                .max((high - prev_close).abs())
-                .max((low - prev_close).abs());
+    // Initial Wilder sums over the first `period` movements (indices 1..=period).
+    let mut atr = 0.0;
+    let mut sp_dm = 0.0;
+    let mut sm_dm = 0.0;
+    for i in 1..=period {
+        atr += tr[i];
+        sp_dm += plus_dm[i];
+        sm_dm += minus_dm[i];
+    }
 
-            tr_sum += tr;
-        }
+    let dx_at = |atr: f64, sp: f64, sm: f64| -> f64 {
+        if atr <= 0.0 { return 0.0; }
+        let pdi = 100.0 * sp / atr;
+        let mdi = 100.0 * sm / atr;
+        let denom = pdi + mdi;
+        if denom > 0.0 { 100.0 * (pdi - mdi).abs() / denom } else { 0.0 }
+    };
 
-        out[i] = tr_sum / window as f64;
+    let mut dx = vec![f64::NAN; n];
+    dx[period] = dx_at(atr, sp_dm, sm_dm);
+    for i in (period + 1)..n {
+        atr = atr - (atr / period as f64) + tr[i];
+        sp_dm = sp_dm - (sp_dm / period as f64) + plus_dm[i];
+        sm_dm = sm_dm - (sm_dm / period as f64) + minus_dm[i];
+        dx[i] = dx_at(atr, sp_dm, sm_dm);
+    }
+
+    // First ADX = simple average of the first `period` DX values (indices
+    // period..2*period), then Wilder-smoothed thereafter.
+    let first_adx_idx = 2 * period - 1;
+    let mut adx = 0.0;
+    for i in period..(2 * period) {
+        adx += dx[i];
+    }
+    adx /= period as f64;
+    out[first_adx_idx] = adx;
+    for i in (first_adx_idx + 1)..n {
+        adx = (adx * (period as f64 - 1.0) + dx[i]) / period as f64;
+        out[i] = adx;
     }
 
     out
@@ -377,44 +391,6 @@ fn rolling_zscore(data: &Vec<f64>, window: usize) -> Vec<f64> {
         }
     }
     result
-}
-
-fn rolling_max(data: &Vec<f64>, window: usize) -> Vec<f64> {
-    let mut out = vec![f64::NAN; data.len()];
-    for i in 0..data.len() {
-        let start = if i >= window { i - window + 1 } else { 0 };
-        let slice = &data[start..=i];
-        let mut m = slice[0];
-        for &val in slice {
-            if val > m { m = val; }
-        }
-        out[i] = m;
-    }
-    out
-}
-
-fn rolling_sma(data: &Vec<f64>, window: usize) -> Vec<f64> {
-    let mut out = vec![f64::NAN; data.len()];
-    for i in 0..data.len() {
-        let start = if i >= window { i - window + 1 } else { 0 };
-        let slice = &data[start..=i];
-        out[i] = slice.iter().sum::<f64>() / slice.len() as f64;
-    }
-    out
-}
-
-fn rolling_std(data: &Vec<f64>, window: usize) -> Vec<f64> {
-    let mut out = vec![f64::NAN; data.len()];
-    for i in 0..data.len() {
-        let start = if i >= window { i - window + 1 } else { 0 };
-        let slice = &data[start..=i];
-        let n = slice.len() as f64;
-        if n < 2.0 { continue; }
-        let mean = slice.iter().sum::<f64>() / n;
-        let var = slice.iter().map(|&x| (x - mean).powi(2)).sum::<f64>() / n;
-        out[i] = var.sqrt();
-    }
-    out
 }
 
 // -----------------------------

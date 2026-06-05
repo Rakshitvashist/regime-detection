@@ -104,4 +104,4 @@ df["regime"] = df["regime_label"]
 
 df.to_json("../output/regime_labeled.json", orient="records")
 
-print("\nSaved regime_labeled.json 🚀")
+print("\nSaved regime_labeled.json")

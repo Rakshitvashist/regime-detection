@@ -14606,5 +14606,29 @@
     "ret_21d": -0.03177591258239787,
     "symbol": "BANKNIFTY",
     "vol_ratio": 0.6711897491087444
+  },
+  {
+    "close": 53714.6484375,
+    "date": "2026-06-02",
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.02093753101633622,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.6820304026180593
+  },
+  {
+    "close": 54185.94921875,
+    "date": "2026-06-03",
+    "regime": "sideways_low_vol",
+    "ret_21d": -0.012619710474047197,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.6732690106456886
+  },
+  {
+    "close": 54727.8984375,
+    "date": "2026-06-05",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.0033154433403788097,
+    "symbol": "BANKNIFTY",
+    "vol_ratio": 0.6827307374062721
   }
 ]

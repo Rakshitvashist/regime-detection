@@ -9,8 +9,11 @@ TICKER_MAP = {
     "NSE_BANKNIFTY": "^NSEBANK",
     "NSE_CNX500": "^CRSLDX",
     "FX_IDC_USDINR": "INR=X",
-    "CFI_WTI": "CL=F",
-    "MCX_CRUDEOIL1!": "CL=F" # Mapping MCX to WTI since local Indian MCX data isn't reliably available on yf
+    "CFI_WTI": "CL=F",        # WTI crude (NYMEX)
+    # MCX crude isn't reliably on yfinance. It tracks WTI, but mapping it to WTI
+    # too made "NIFTY -> Crude" and "NIFTY -> WTI" identical OOS tests. Use Brent
+    # (a distinct crude benchmark) so the two generalization tests differ.
+    "MCX_CRUDEOIL1!": "BZ=F",  # Brent crude (ICE) as a distinct crude proxy
 }
 
 START_DATE = "2010-01-01"

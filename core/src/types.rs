@@ -63,10 +63,9 @@ pub struct FeatureRow {
     // -----------------------------
     pub ret_z21: f64,
 
-    // -----------------------------
-    // NICHE FEATURES
-    // -----------------------------
-    pub dist_from_252h: f64,
-    pub tii_21: f64,
-    pub vol_of_vol_21: f64,
+    // NOTE: the "niche" structural features (dist_from_252h, tii_21,
+    // vol_of_vol_21) used to be emitted here too, but the Python pipeline
+    // (regime_features.add_structural_features) recomputes them from `close`
+    // and silently overwrote these values. They are now computed in exactly
+    // one place (Python) to remove the duplicate, drift-prone definitions.
 }

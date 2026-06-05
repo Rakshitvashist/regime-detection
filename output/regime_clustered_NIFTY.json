@@ -4,2008 +4,2008 @@
     "close": 10792.5,
     "ret_21d": -0.007745879973337644,
     "vol_ratio": 0.866369109849772,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-03",
     "close": 10672.25,
     "ret_21d": -0.019432640404272394,
     "vol_ratio": 0.8755790537359891,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-04",
     "close": 10727.349609375,
     "ret_21d": -0.013077914404986402,
     "vol_ratio": 0.8953379523663026,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-07",
     "close": 10771.7998046875,
     "ret_21d": -0.0010294619754765977,
     "vol_ratio": 0.904840330570541,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-08",
     "close": 10802.150390625,
     "ret_21d": 0.01896020644870311,
     "vol_ratio": 0.9056208559349384,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-09",
     "close": 10855.150390625,
     "ret_21d": 0.015097692320126033,
     "vol_ratio": 0.868054478561044,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-10",
     "close": 10821.599609375,
     "ret_21d": 0.03176345483447984,
     "vol_ratio": 0.906292660842137,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-11",
     "close": 10794.9501953125,
     "ret_21d": 0.023300436109617184,
     "vol_ratio": 0.7843436879575814,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-14",
     "close": 10737.599609375,
     "ret_21d": 0.0,
     "vol_ratio": 0.7836526650680001,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-15",
     "close": 10886.7998046875,
     "ret_21d": 0.008826350406002437,
     "vol_ratio": 0.7014280596895975,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-16",
     "close": 10890.2998046875,
     "ret_21d": 0.00785248257511828,
     "vol_ratio": 0.783686319585765,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-17",
     "close": 10905.2001953125,
     "ret_21d": 0.0015475794350863215,
     "vol_ratio": 0.8220751279626808,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-18",
     "close": 10906.9501953125,
     "ret_21d": -0.00016042241226432719,
     "vol_ratio": 0.8021065288517017,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-21",
     "close": 10961.849609375,
     "ret_21d": -0.0004969496056057565,
     "vol_ratio": 0.8040502092208056,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-22",
     "close": 10922.75,
     "ret_21d": -0.0026434430085011673,
     "vol_ratio": 0.8154202318633762,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-23",
     "close": 10831.5,
     "ret_21d": 0.0072066207922634185,
     "vol_ratio": 0.8383756650892261,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-24",
     "close": 10849.7998046875,
     "ret_21d": 0.017470793331223256,
     "vol_ratio": 0.7222242706394805,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-25",
     "close": 10780.5498046875,
     "ret_21d": 0.004725154327251957,
     "vol_ratio": 0.6922531295314742,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-28",
     "close": 10661.5498046875,
     "ret_21d": -0.010969591471316598,
     "vol_ratio": 0.6993065523163845,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-29",
     "close": 10652.2001953125,
     "ret_21d": -0.019125423608102432,
     "vol_ratio": 0.7428712289594375,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-30",
     "close": 10651.7998046875,
     "ret_21d": -0.019401522090978562,
     "vol_ratio": 0.7198888971163658,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-01-31",
     "close": 10830.9501953125,
     "ret_21d": 0.003562677351169885,
     "vol_ratio": 0.7592702618037886,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-01",
     "close": 10893.650390625,
     "ret_21d": 0.020745427686289286,
     "vol_ratio": 0.8586458417560712,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-04",
     "close": 10912.25,
     "ret_21d": 0.01723635355963493,
     "vol_ratio": 0.8384329134713325,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-05",
     "close": 10934.349609375,
     "ret_21d": 0.015090310591992617,
     "vol_ratio": 0.830262655478961,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-06",
     "close": 11062.4501953125,
     "ret_21d": 0.02409703580070599,
     "vol_ratio": 0.853579396732886,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-07",
     "close": 11069.400390625,
     "ret_21d": 0.01973717473182468,
     "vol_ratio": 0.8945657003195757,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-08",
     "close": 10943.599609375,
     "ret_21d": 0.011273749205644945,
     "vol_ratio": 0.8877865993552363,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-11",
     "close": 10888.7998046875,
     "ret_21d": 0.008693843665508849,
     "vol_ratio": 0.93348639186187,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-12",
     "close": 10831.400390625,
     "ret_21d": 0.008735730951273446,
     "vol_ratio": 0.9393773188392984,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-14",
     "close": 10746.0498046875,
     "ret_21d": -0.012928500801438259,
     "vol_ratio": 0.9479174105687467,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-15",
     "close": 10724.400390625,
     "ret_21d": -0.015233686586947015,
     "vol_ratio": 0.8903455445007127,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-18",
     "close": 10640.9501953125,
     "ret_21d": -0.02423155882214667,
     "vol_ratio": 0.890239368279881,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-19",
     "close": 10604.349609375,
     "ret_21d": -0.027743831274442687,
     "vol_ratio": 0.9032410469554663,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-20",
     "close": 10735.4501953125,
     "ret_21d": -0.020653395378538497,
     "vol_ratio": 0.9076626472004844,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-21",
     "close": 10789.849609375,
     "ret_21d": -0.012167301332082103,
     "vol_ratio": 0.9578944569709921,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-22",
     "close": 10791.650390625,
     "ret_21d": -0.0036790480889073995,
     "vol_ratio": 0.9781720612714436,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-25",
     "close": 10880.099609375,
     "ret_21d": 0.002792660254838042,
     "vol_ratio": 0.9554052228736873,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-26",
     "close": 10835.2998046875,
     "ret_21d": 0.005078590701950381,
     "vol_ratio": 0.9814859597047286,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-27",
     "close": 10806.650390625,
     "ret_21d": 0.013609708587930092,
     "vol_ratio": 0.9794909312054119,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-02-28",
     "close": 10792.5,
     "ret_21d": 0.013170969575772684,
     "vol_ratio": 0.9286308060855631,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-01",
     "close": 10863.5,
     "ret_21d": 0.01987459388969537,
     "vol_ratio": 0.9309071131043811,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-05",
     "close": 10987.4501953125,
     "ret_21d": 0.014449332438785545,
     "vol_ratio": 0.9585553000292986,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-06",
     "close": 11053.0,
     "ret_21d": 0.014627751365339892,
     "vol_ratio": 0.877331363078814,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-07",
     "close": 11058.2001953125,
     "ret_21d": 0.013374894757039124,
     "vol_ratio": 0.8743946568633567,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-08",
     "close": 11035.400390625,
     "ret_21d": 0.009241590479543538,
     "vol_ratio": 0.8742176135494847,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-11",
     "close": 11168.0498046875,
     "ret_21d": 0.00954577037732074,
     "vol_ratio": 0.8838412158444344,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-12",
     "close": 11301.2001953125,
     "ret_21d": 0.020940592670567693,
     "vol_ratio": 0.9088111705671252,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-13",
     "close": 11341.7001953125,
     "ret_21d": 0.036377480915553706,
     "vol_ratio": 0.958879181406566,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-14",
     "close": 11343.25,
     "ret_21d": 0.04173556346557716,
     "vol_ratio": 0.9399802568761442,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-15",
     "close": 11426.849609375,
     "ret_21d": 0.05497435209443324,
     "vol_ratio": 0.9198525946759312,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-18",
     "close": 11462.2001953125,
     "ret_21d": 0.06664312967473962,
     "vol_ratio": 0.9397511578103336,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-19",
     "close": 11532.400390625,
     "ret_21d": 0.07534220754256182,
     "vol_ratio": 0.8748663907988646,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-20",
     "close": 11521.0498046875,
     "ret_21d": 0.08270874247327065,
     "vol_ratio": 0.8588496929349894,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-22",
     "close": 11456.900390625,
     "ret_21d": 0.08039632911539285,
     "vol_ratio": 0.7949536751150826,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-25",
     "close": 11354.25,
     "ret_21d": 0.05764078761761571,
     "vol_ratio": 0.8125231080765778,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-26",
     "close": 11483.25,
     "ret_21d": 0.06426413858655855,
     "vol_ratio": 0.8425813603618514,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-27",
     "close": 11445.0498046875,
     "ret_21d": 0.06054675516824792,
     "vol_ratio": 0.8671601699185276,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-03-28",
     "close": 11570.0,
     "ret_21d": 0.06340938184339207,
     "vol_ratio": 0.9372525883742249,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-01",
     "close": 11669.150390625,
     "ret_21d": 0.07695685407585717,
     "vol_ratio": 0.9579095027206095,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-02",
     "close": 11713.2001953125,
     "ret_21d": 0.08388814035049674,
     "vol_ratio": 0.9379651212122263,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-03",
     "close": 11643.9501953125,
     "ret_21d": 0.07889276769168396,
     "vol_ratio": 0.9149002044526707,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-04",
     "close": 11598.0,
     "ret_21d": 0.0676117273438579,
     "vol_ratio": 0.9525652079925088,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-05",
     "close": 11665.9501953125,
     "ret_21d": 0.061752270812518884,
     "vol_ratio": 0.9730827967923291,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-08",
     "close": 11604.5,
     "ret_21d": 0.04989595584909079,
     "vol_ratio": 0.9435899823321912,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-09",
     "close": 11671.9501953125,
     "ret_21d": 0.05550179858926452,
     "vol_ratio": 0.9924967827524178,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-10",
     "close": 11584.2998046875,
     "ret_21d": 0.04973987301165894,
     "vol_ratio": 0.995639794278097,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-11",
     "close": 11596.7001953125,
     "ret_21d": 0.038381848050595746,
     "vol_ratio": 1.0269900673981236,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-12",
     "close": 11643.4501953125,
     "ret_21d": 0.030284394054178154,
     "vol_ratio": 0.9730216271394116,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-15",
     "close": 11690.349609375,
     "ret_21d": 0.03074048934978868,
     "vol_ratio": 0.9148528988632735,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-16",
     "close": 11787.150390625,
     "ret_21d": 0.03913343976594019,
     "vol_ratio": 0.9178306668176689,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-18",
     "close": 11752.7998046875,
     "ret_21d": 0.02852493963384961,
     "vol_ratio": 0.9371532393058252,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-22",
     "close": 11594.4501953125,
     "ret_21d": 0.011537924460094828,
     "vol_ratio": 0.9339927415594265,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-23",
     "close": 11575.9501953125,
     "ret_21d": 0.003776300094722851,
     "vol_ratio": 1.038371833938738,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-24",
     "close": 11726.150390625,
     "ret_21d": 0.017802248008167876,
     "vol_ratio": 1.0218329278266578,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-25",
     "close": 11641.7998046875,
     "ret_21d": 0.0161386943901336,
     "vol_ratio": 1.0738939376761194,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-26",
     "close": 11754.650390625,
     "ret_21d": 0.03526436273862221,
     "vol_ratio": 1.0729828329050575,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-04-30",
     "close": 11748.150390625,
     "ret_21d": 0.023068416225807242,
     "vol_ratio": 1.0475533111245805,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-02",
     "close": 11724.75,
     "ret_21d": 0.02443853020175979,
     "vol_ratio": 1.004139174454671,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-03",
     "close": 11712.25,
     "ret_21d": 0.012294727744165845,
     "vol_ratio": 1.012507810198111,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-06",
     "close": 11598.25,
     "ret_21d": -0.006075882840790303,
     "vol_ratio": 0.9611232100728326,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-07",
     "close": 11497.900390625,
     "ret_21d": -0.018380954913898018,
     "vol_ratio": 0.9657963624209656,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-08",
     "close": 11359.4501953125,
     "ret_21d": -0.024433288980790335,
     "vol_ratio": 0.9984391759300104,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-09",
     "close": 11301.7998046875,
     "ret_21d": -0.025538902855018142,
     "vol_ratio": 1.019242231790774,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-10",
     "close": 11278.900390625,
     "ret_21d": -0.03317773505007937,
     "vol_ratio": 1.017115572795845,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-13",
     "close": 11148.2001953125,
     "ret_21d": -0.03932093624779176,
     "vol_ratio": 1.032642373389992,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-14",
     "close": 11222.0498046875,
     "ret_21d": -0.0385454344044136,
     "vol_ratio": 1.053593702728612,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-15",
     "close": 11157.0,
     "ret_21d": -0.036886114127898884,
     "vol_ratio": 1.0535787599275026,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-16",
     "close": 11257.099609375,
     "ret_21d": -0.02928424294997034,
     "vol_ratio": 1.039811962551137,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-17",
     "close": 11407.150390625,
     "ret_21d": -0.02029465499690386,
     "vol_ratio": 1.0972909534686581,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-20",
     "close": 11828.25,
     "ret_21d": 0.011796087818829015,
     "vol_ratio": 1.1470442374224399,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-21",
     "close": 11709.099609375,
     "ret_21d": -0.006621683669369216,
     "vol_ratio": 1.3872616338733081,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-22",
     "close": 11737.900390625,
     "ret_21d": -0.0012677331623190957,
     "vol_ratio": 1.3834446821827204,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-23",
     "close": 11657.0498046875,
     "ret_21d": 0.005399101149298868,
     "vol_ratio": 1.3894964624559971,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-24",
     "close": 11844.099609375,
     "ret_21d": 0.023164354505523344,
     "vol_ratio": 1.3577496926080148,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-27",
     "close": 11924.75,
     "ret_21d": 0.01693647128505016,
     "vol_ratio": 1.3843772564960155,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-28",
     "close": 11928.75,
     "ret_21d": 0.02464826746092652,
     "vol_ratio": 1.3673315795259533,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-29",
     "close": 11861.099609375,
     "ret_21d": 0.009055923843970692,
     "vol_ratio": 1.354431676336712,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-30",
     "close": 11945.900390625,
     "ret_21d": 0.01683243688792113,
     "vol_ratio": 1.3540142057524738,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-05-31",
     "close": 11922.7998046875,
     "ret_21d": 0.016891601500031994,
     "vol_ratio": 1.3614189889178954,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-03",
     "close": 12088.5498046875,
     "ret_21d": 0.03212873740634814,
     "vol_ratio": 1.3597492426591826,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-04",
     "close": 12021.650390625,
     "ret_21d": 0.03650554097600933,
     "vol_ratio": 1.3820747064142882,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-06",
     "close": 11843.75,
     "ret_21d": 0.030079370809038775,
     "vol_ratio": 1.3603815691334937,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-07",
     "close": 11870.650390625,
     "ret_21d": 0.045002195222744845,
     "vol_ratio": 1.363736667687185,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-10",
     "close": 11922.7001953125,
     "ret_21d": 0.054938186957397495,
     "vol_ratio": 1.319614809541324,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-11",
     "close": 11965.599609375,
     "ret_21d": 0.06088352542955189,
     "vol_ratio": 1.3094957304417278,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-12",
     "close": 11906.2001953125,
     "ret_21d": 0.06799303804381962,
     "vol_ratio": 1.3169278254867507,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-13",
     "close": 11914.0498046875,
     "ret_21d": 0.061664313743372334,
     "vol_ratio": 1.2772907289345317,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-14",
     "close": 11823.2998046875,
     "ret_21d": 0.05972033742829619,
     "vol_ratio": 1.275558266733909,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-17",
     "close": 11672.150390625,
     "ret_21d": 0.036870134906183294,
     "vol_ratio": 1.275502966099845,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-18",
     "close": 11691.5,
     "ret_21d": 0.0249273131007981,
     "vol_ratio": 1.3115960959191595,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-19",
     "close": 11691.4501953125,
     "ret_21d": -0.011565515159681294,
     "vol_ratio": 1.294384825268059,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-20",
     "close": 11831.75,
     "ret_21d": 0.010474792658420773,
     "vol_ratio": 0.9042928217819081,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-21",
     "close": 11724.099609375,
     "ret_21d": -0.0011757453028842235,
     "vol_ratio": 0.9071692085102206,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-24",
     "close": 11699.650390625,
     "ret_21d": 0.003654491200712595,
     "vol_ratio": 0.9308140685891848,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-25",
     "close": 11796.4501953125,
     "ret_21d": -0.004023050770763814,
     "vol_ratio": 0.9161155169222899,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-26",
     "close": 11847.5498046875,
     "ret_21d": -0.006473946649824924,
     "vol_ratio": 0.8472326326217289,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-27",
     "close": 11841.5498046875,
     "ret_21d": -0.007310086581787667,
     "vol_ratio": 0.8356108520673248,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-06-28",
     "close": 11788.849609375,
     "ret_21d": -0.006091340801395284,
     "vol_ratio": 0.8384851562702167,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-01",
     "close": 11865.599609375,
     "ret_21d": -0.006722036734294168,
     "vol_ratio": 0.8397217850865925,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-02",
     "close": 11910.2998046875,
     "ret_21d": -0.001048411464150023,
     "vol_ratio": 0.8432608104612964,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-03",
     "close": 11916.75,
     "ret_21d": -0.014211779532138924,
     "vol_ratio": 0.8483868070937455,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-04",
     "close": 11946.75,
     "ret_21d": -0.0062304582308774226,
     "vol_ratio": 0.776983812069772,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-05",
     "close": 11811.150390625,
     "ret_21d": -0.002752473614775708,
     "vol_ratio": 0.7749453886698479,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-08",
     "close": 11558.599609375,
     "ret_21d": -0.026287589220591157,
     "vol_ratio": 0.7264396436911355,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-09",
     "close": 11555.900390625,
     "ret_21d": -0.030764826648221,
     "vol_ratio": 0.8569123551701024,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-10",
     "close": 11498.900390625,
     "ret_21d": -0.03900341261497198,
     "vol_ratio": 0.8471193902169133,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-11",
     "close": 11582.900390625,
     "ret_21d": -0.027153902956779108,
     "vol_ratio": 0.8421262866097285,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-12",
     "close": 11552.5,
     "ret_21d": -0.030346507746278784,
     "vol_ratio": 0.8633339498728213,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-15",
     "close": 11588.349609375,
     "ret_21d": -0.0198717954542057,
     "vol_ratio": 0.8647927746993312,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-16",
     "close": 11662.599609375,
     "ret_21d": -0.0008182537861807226,
     "vol_ratio": 0.8606126478778984,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-17",
     "close": 11687.5,
     "ret_21d": -0.00034212889706197736,
     "vol_ratio": 0.8201931910892952,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-18",
     "close": 11596.900390625,
     "ret_21d": -0.008087089549028592,
     "vol_ratio": 0.8217444614375022,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-19",
     "close": 11419.25,
     "ret_21d": -0.034863819806875584,
     "vol_ratio": 0.8388398624542696,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-22",
     "close": 11346.2001953125,
     "ret_21d": -0.03223270243800369,
     "vol_ratio": 0.8391062694703011,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-23",
     "close": 11331.0498046875,
     "ret_21d": -0.03150526499773543,
     "vol_ratio": 0.8253736093928029,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-24",
     "close": 11271.2998046875,
     "ret_21d": -0.04451766268073398,
     "vol_ratio": 0.8385341225584736,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-25",
     "close": 11252.150390625,
     "ret_21d": -0.050255067408699894,
     "vol_ratio": 0.8044177941522606,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-26",
     "close": 11284.2998046875,
     "ret_21d": -0.04705887398112463,
     "vol_ratio": 0.8022022307256974,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-29",
     "close": 11189.2001953125,
     "ret_21d": -0.05086581252047129,
     "vol_ratio": 0.8138087076293604,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-30",
     "close": 11085.400390625,
     "ret_21d": -0.06575303772542307,
     "vol_ratio": 0.8296487874079661,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-07-31",
     "close": 11118.0,
     "ret_21d": -0.0665222385397618,
     "vol_ratio": 0.8066119643053176,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-01",
     "close": 10980.0,
     "ret_21d": -0.07860784190320347,
     "vol_ratio": 0.8014519021696669,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-02",
     "close": 10997.349609375,
     "ret_21d": -0.0794693444346789,
     "vol_ratio": 0.8140209792296929,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-05",
     "close": 10862.599609375,
     "ret_21d": -0.08030977084187363,
     "vol_ratio": 0.815600118096639,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-06",
     "close": 10948.25,
     "ret_21d": -0.05280480594551917,
     "vol_ratio": 0.8153603867268452,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-07",
     "close": 10855.5,
     "ret_21d": -0.0606097635795837,
     "vol_ratio": 0.7409218162954825,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-08",
     "close": 11032.4501953125,
     "ret_21d": -0.04056476527901698,
     "vol_ratio": 0.7484760366529364,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-09",
     "close": 11109.650390625,
     "ret_21d": -0.04085764221740529,
     "vol_ratio": 0.8527095808945219,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-13",
     "close": 10925.849609375,
     "ret_21d": -0.05424370401428258,
     "vol_ratio": 0.8570830306243916,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-14",
     "close": 11029.400390625,
     "ret_21d": -0.04823372072739407,
     "vol_ratio": 0.9043402330313988,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-16",
     "close": 11047.7998046875,
     "ret_21d": -0.05271550299928773,
     "vol_ratio": 0.9324618094222789,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-19",
     "close": 11053.900390625,
     "ret_21d": -0.05421173128342249,
     "vol_ratio": 0.9209186267343734,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-20",
     "close": 11017.0,
     "ret_21d": -0.05000477464597308,
     "vol_ratio": 0.9328343172081,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-21",
     "close": 10918.7001953125,
     "ret_21d": -0.04383385990213895,
     "vol_ratio": 1.0755718654343984,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-22",
     "close": 10741.349609375,
     "ret_21d": -0.05330864743488173,
     "vol_ratio": 1.0316121425349591,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-23",
     "close": 10829.349609375,
     "ret_21d": -0.044276585485040765,
     "vol_ratio": 1.0682762937959758,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-26",
     "close": 11057.849609375,
     "ret_21d": -0.01893749603073558,
     "vol_ratio": 1.098151994240102,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-27",
     "close": 11105.349609375,
     "ret_21d": -0.013046464555993675,
     "vol_ratio": 1.2236758578514295,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-28",
     "close": 11046.099609375,
     "ret_21d": -0.021108992089482692,
     "vol_ratio": 1.2351600516175423,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-29",
     "close": 10948.2998046875,
     "ret_21d": -0.02152972387838059,
     "vol_ratio": 1.2351927522994484,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-08-30",
     "close": 11023.25,
     "ret_21d": -0.005606508419629175,
     "vol_ratio": 1.231700759150813,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-03",
     "close": 10797.900390625,
     "ret_21d": -0.0287911143528512,
     "vol_ratio": 1.2267891562293802,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-04",
     "close": 10844.650390625,
     "ret_21d": -0.012326922529599327,
     "vol_ratio": 1.2772751847138732,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-05",
     "close": 10847.900390625,
     "ret_21d": -0.013589566946439313,
     "vol_ratio": 1.2783011021309558,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-06",
     "close": 10946.2001953125,
     "ret_21d": 0.0076961858987556475,
     "vol_ratio": 1.2788707346874364,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-09",
     "close": 11003.0498046875,
     "ret_21d": 0.005005348314799152,
     "vol_ratio": 1.2715191108354567,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-11",
     "close": 11035.7001953125,
     "ret_21d": 0.016599898237068755,
     "vol_ratio": 1.2585804606635704,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-12",
     "close": 10982.7998046875,
     "ret_21d": -0.004500395627989873,
     "vol_ratio": 1.2398317265514924,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-13",
     "close": 11075.900390625,
     "ret_21d": -0.003037899376966968,
     "vol_ratio": 1.1769054988437717,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-16",
     "close": 11003.5,
     "ret_21d": 0.0071070345466197615,
     "vol_ratio": 1.173362512219445,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-17",
     "close": 10817.599609375,
     "ret_21d": -0.019203290636726766,
     "vol_ratio": 1.1015592595256654,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-18",
     "close": 10840.650390625,
     "ret_21d": -0.018750286729001697,
     "vol_ratio": 1.1310051312207934,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-19",
     "close": 10704.7998046875,
     "ret_21d": -0.031581665620361354,
     "vol_ratio": 1.1461577949085222,
-    "cluster": 1,
-    "regime": "bear"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-20",
     "close": 11274.2001953125,
     "ret_21d": 0.02334575613256784,
     "vol_ratio": 1.167108888093474,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-23",
     "close": 11600.2001953125,
     "ret_21d": 0.06241585425090923,
     "vol_ratio": 1.4063800457109839,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-24",
     "close": 11588.2001953125,
     "ret_21d": 0.07884024044784588,
     "vol_ratio": 1.4252767178703374,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-25",
     "close": 11440.2001953125,
     "ret_21d": 0.05640695036834753,
     "vol_ratio": 1.3840777135644047,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-26",
     "close": 11571.2001953125,
     "ret_21d": 0.046424088233418814,
     "vol_ratio": 1.401820167822414,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-27",
     "close": 11512.400390625,
     "ret_21d": 0.03665357648050738,
     "vol_ratio": 1.3619897488594845,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-09-30",
     "close": 11474.4501953125,
     "ret_21d": 0.0387784467898471,
     "vol_ratio": 1.3679540518202915,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-01",
     "close": 11359.900390625,
     "ret_21d": 0.03759493193283525,
     "vol_ratio": 1.3639714459165875,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-03",
     "close": 11314.0,
     "ret_21d": 0.026376068763749316,
     "vol_ratio": 1.3614667003405663,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-04",
     "close": 11174.75,
     "ret_21d": 0.03490026725030626,
     "vol_ratio": 1.3651325584727894,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-07",
     "close": 11126.400390625,
     "ret_21d": 0.02598055168690072,
     "vol_ratio": 1.3179714248941636,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-09",
     "close": 11313.2998046875,
     "ret_21d": 0.04290225733126274,
     "vol_ratio": 1.3208742940453817,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-10",
     "close": 11234.5498046875,
     "ret_21d": 0.026342438858233175,
     "vol_ratio": 1.3279743011953453,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-11",
     "close": 11305.0498046875,
     "ret_21d": 0.027446935655180082,
     "vol_ratio": 1.3362413552095773,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-14",
     "close": 11341.150390625,
     "ret_21d": 0.027678370190071133,
     "vol_ratio": 1.3673316666884294,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-15",
     "close": 11428.2998046875,
     "ret_21d": 0.04056342716998795,
     "vol_ratio": 1.3664882407756866,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-16",
     "close": 11464.0,
     "ret_21d": 0.035040005388952356,
     "vol_ratio": 1.362598037886804,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-17",
     "close": 11586.349609375,
     "ret_21d": 0.05296947420139042,
     "vol_ratio": 1.3605625165739466,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-18",
     "close": 11661.849609375,
     "ret_21d": 0.07804411611503315,
     "vol_ratio": 1.351762543269243,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-22",
     "close": 11588.349609375,
     "ret_21d": 0.06897180444049833,
     "vol_ratio": 1.2972574223629991,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-23",
     "close": 11604.099609375,
     "ret_21d": 0.08400902595989779,
     "vol_ratio": 1.3099821820662263,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-24",
     "close": 11582.599609375,
     "ret_21d": 0.027354438338847764,
     "vol_ratio": 1.2752121118321105,
-    "cluster": 1,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-25",
     "close": 11583.900390625,
     "ret_21d": -0.0014051313264478171,
     "vol_ratio": 0.8574688493792731,
-    "cluster": 1,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-29",
     "close": 11786.849609375,
     "ret_21d": 0.017142387145059335,
     "vol_ratio": 0.68113824795878,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-30",
     "close": 11844.099609375,
     "ret_21d": 0.03530527500978464,
     "vol_ratio": 0.7446039660660551,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-10-31",
     "close": 11877.4501953125,
     "ret_21d": 0.026466571732469246,
     "vol_ratio": 0.6987360205726766,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-01",
     "close": 11890.599609375,
     "ret_21d": 0.032851465021837,
     "vol_ratio": 0.6747705457865352,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-04",
     "close": 11941.2998046875,
     "ret_21d": 0.04068601121870885,
     "vol_ratio": 0.663793274820464,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-05",
     "close": 11917.2001953125,
     "ret_21d": 0.04905851156471619,
     "vol_ratio": 0.6583527989892816,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-06",
     "close": 11966.0498046875,
     "ret_21d": 0.0576321199122769,
     "vol_ratio": 0.6252423492344843,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-07",
     "close": 12012.0498046875,
     "ret_21d": 0.07492783325689611,
     "vol_ratio": 0.6171663458069895,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-08",
     "close": 11908.150390625,
     "ret_21d": 0.0702608186434397,
     "vol_ratio": 0.5429457437012912,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-11",
     "close": 11913.4501953125,
     "ret_21d": 0.05304821767176504,
     "vol_ratio": 0.5737755880556782,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-13",
     "close": 11840.4501953125,
     "ret_21d": 0.05393187988469239,
     "vol_ratio": 0.5099534733728236,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-14",
     "close": 11872.099609375,
     "ret_21d": 0.05015898332905877,
     "vol_ratio": 0.5084116090768704,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-15",
     "close": 11895.4501953125,
     "ret_21d": 0.0488750951707424,
     "vol_ratio": 0.5042206428410196,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-18",
     "close": 11884.5,
     "ret_21d": 0.039918465835607764,
     "vol_ratio": 0.5069939181444563,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-19",
     "close": 11940.099609375,
     "ret_21d": 0.04152997290430904,
     "vol_ratio": 0.505344033282026,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-20",
     "close": 11999.099609375,
     "ret_21d": 0.03562381715687457,
     "vol_ratio": 0.5084021022555609,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-21",
     "close": 11968.400390625,
     "ret_21d": 0.026286634755053218,
     "vol_ratio": 0.49092718570613836,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-22",
     "close": 11914.400390625,
     "ret_21d": 0.028136084277801343,
     "vol_ratio": 0.4886074147455569,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-25",
     "close": 12073.75,
     "ret_21d": 0.04047279896197775,
     "vol_ratio": 0.47738360049227674,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-26",
     "close": 12037.7001953125,
     "ret_21d": 0.039291748077792565,
     "vol_ratio": 0.5281211426748154,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-27",
     "close": 12100.7001953125,
     "ret_21d": 0.04461362643499189,
     "vol_ratio": 0.5319113971316237,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-28",
     "close": 12151.150390625,
     "ret_21d": 0.030907391993891586,
     "vol_ratio": 0.5379708457760951,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-11-29",
     "close": 12056.0498046875,
     "ret_21d": 0.017895002769542367,
     "vol_ratio": 0.4468863960199038,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-02",
     "close": 12048.2001953125,
     "ret_21d": 0.014375981140075655,
     "vol_ratio": 0.4758220570800838,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-03",
     "close": 11994.2001953125,
     "ret_21d": 0.008712814268492908,
     "vol_ratio": 0.4874484558968117,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-04",
     "close": 12043.2001953125,
     "ret_21d": 0.008533442111971823,
     "vol_ratio": 0.4978233756105302,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-05",
     "close": 12018.400390625,
     "ret_21d": 0.008491943883959019,
     "vol_ratio": 0.4985525109284547,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-06",
     "close": 11921.5,
     "ret_21d": -0.003723016819639824,
     "vol_ratio": 0.5020382586934936,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-09",
     "close": 11937.5,
     "ret_21d": -0.006206251713875566,
     "vol_ratio": 0.5222080523207959,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-10",
     "close": 11856.7998046875,
     "ret_21d": -0.0043122218189255435,
     "vol_ratio": 0.5349525368985194,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-11",
     "close": 11910.150390625,
     "ret_21d": -0.00027698144814491954,
     "vol_ratio": 0.5197186079617444,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-12",
     "close": 11971.7998046875,
     "ret_21d": 0.011093295204856357,
     "vol_ratio": 0.528825307272826,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-13",
     "close": 12086.7001953125,
     "ret_21d": 0.018076043244114715,
     "vol_ratio": 0.52296952467425,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-16",
     "close": 12053.9501953125,
     "ret_21d": 0.013324422144397552,
     "vol_ratio": 0.5539894376653717,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-17",
     "close": 12165.0,
     "ret_21d": 0.02360217089486305,
     "vol_ratio": 0.5578165677285449,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-18",
     "close": 12221.650390625,
     "ret_21d": 0.023580270723113195,
     "vol_ratio": 0.584274814392338,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-19",
     "close": 12259.7001953125,
     "ret_21d": 0.021718345077649914,
     "vol_ratio": 0.5858877403361188,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-20",
     "close": 12271.7998046875,
     "ret_21d": 0.02535003878213815,
     "vol_ratio": 0.5844635292830163,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-23",
     "close": 12262.75,
     "ret_21d": 0.02923769538995047,
     "vol_ratio": 0.5953128176898997,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-24",
     "close": 12214.5498046875,
     "ret_21d": 0.011661646521379021,
     "vol_ratio": 0.5822388150277331,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-26",
     "close": 12126.5498046875,
     "ret_21d": 0.0073809455239297606,
     "vol_ratio": 0.5307578936282205,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-27",
     "close": 12245.7998046875,
     "ret_21d": 0.011991009365822203,
     "vol_ratio": 0.7341240669245527,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-30",
     "close": 12255.849609375,
     "ret_21d": 0.008616403828791253,
     "vol_ratio": 0.868495676957283,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2019-12-31",
     "close": 12168.4501953125,
     "ret_21d": 0.009323152479122854,
     "vol_ratio": 0.860187735429824,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-01",
     "close": 12182.5,
     "ret_21d": 0.011146876920234972,
     "vol_ratio": 0.8730120358986916,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-02",
     "close": 12282.2001953125,
     "ret_21d": 0.024011605218374976,
     "vol_ratio": 0.8919172744040688,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-03",
     "close": 12226.650390625,
     "ret_21d": 0.01523267838592468,
     "vol_ratio": 0.9068404247072943,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-06",
     "close": 11993.0498046875,
     "ret_21d": -0.002109314477263924,
     "vol_ratio": 0.9183232887544108,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-07",
     "close": 12052.9501953125,
     "ret_21d": 0.011026313409596034,
     "vol_ratio": 1.0838595205160195,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-08",
     "close": 12025.349609375,
     "ret_21d": 0.007359129581151924,
     "vol_ratio": 1.0613121190046788,
-    "cluster": 2,
-    "regime": "sideways"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-09",
     "close": 12215.900390625,
     "ret_21d": 0.030286467837260078,
     "vol_ratio": 1.0990667395922067,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-10",
     "close": 12256.7998046875,
     "ret_21d": 0.02910537673272051,
     "vol_ratio": 1.1464547921583939,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-13",
     "close": 12329.5498046875,
     "ret_21d": 0.029882724889863654,
     "vol_ratio": 1.1952408434126112,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-14",
     "close": 12362.2998046875,
     "ret_21d": 0.02280189008757616,
     "vol_ratio": 1.2102975147640258,
-    "cluster": 2,
-    "regime": "bull"
+    "cluster": null,
+    "regime": NaN
   },
   {
     "date": "2020-01-15",
@@ -2085,7 +2085,7 @@
     "ret_21d": -0.01632280185083812,
     "vol_ratio": 1.1799369390387335,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2020-01-29",
@@ -2157,7 +2157,7 @@
     "ret_21d": -0.018381617410552442,
     "vol_ratio": 1.2201632417565076,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2020-02-11",
@@ -2189,7 +2189,7 @@
     "ret_21d": -0.019590449976730984,
     "vol_ratio": 1.2330770391630652,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2020-02-17",
@@ -2205,7 +2205,7 @@
     "ret_21d": -0.01898227815297715,
     "vol_ratio": 1.2383113708048474,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2020-02-19",
@@ -2645,7 +2645,7 @@
     "ret_21d": 0.01655580169694959,
     "vol_ratio": 0.60576765587371,
     "cluster": 0,
-    "regime": "sideways"
+    "regime": "bull"
   },
   {
     "date": "2020-05-15",
@@ -2709,7 +2709,7 @@
     "ret_21d": 0.017537992422957505,
     "vol_ratio": 0.5832240497248418,
     "cluster": 0,
-    "regime": "sideways"
+    "regime": "bull"
   },
   {
     "date": "2020-05-28",
@@ -2725,7 +2725,7 @@
     "ret_21d": 0.021255892905735818,
     "vol_ratio": 0.6068534369732198,
     "cluster": 0,
-    "regime": "sideways"
+    "regime": "bull"
   },
   {
     "date": "2020-06-01",
@@ -3189,7 +3189,7 @@
     "ret_21d": 0.02205204063920796,
     "vol_ratio": 0.8289113620601534,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2020-08-20",
@@ -3333,7 +3333,7 @@
     "ret_21d": 0.023406695494816665,
     "vol_ratio": 0.9624071337052537,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2020-09-15",
@@ -3605,7 +3605,7 @@
     "ret_21d": 0.022089979460192977,
     "vol_ratio": 0.9474829559515602,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2020-11-03",
@@ -4205,7 +4205,7 @@
     "ret_21d": 0.023015138595693818,
     "vol_ratio": 1.3349034088174383,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-02-22",
@@ -4221,7 +4221,7 @@
     "ret_21d": 0.02337195533873948,
     "vol_ratio": 1.3731101149931266,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-02-24",
@@ -4325,7 +4325,7 @@
     "ret_21d": -0.016067685198718817,
     "vol_ratio": 1.0649067054556394,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-03-16",
@@ -4333,7 +4333,7 @@
     "ret_21d": -0.016675104537393293,
     "vol_ratio": 1.0636069834482347,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-03-17",
@@ -4429,7 +4429,7 @@
     "ret_21d": -0.0188550121691482,
     "vol_ratio": 0.9257692337692487,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-04-06",
@@ -4493,7 +4493,7 @@
     "ret_21d": -0.0208748042884892,
     "vol_ratio": 0.9740125032281464,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-04-19",
@@ -4637,7 +4637,7 @@
     "ret_21d": 0.025644967787180395,
     "vol_ratio": 1.0085870609394707,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-05-17",
@@ -4645,7 +4645,7 @@
     "ret_21d": 0.028842217167471818,
     "vol_ratio": 0.780863690895904,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-05-18",
@@ -4661,7 +4661,7 @@
     "ret_21d": 0.028205296419630432,
     "vol_ratio": 0.8017464781841317,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-05-20",
@@ -4861,7 +4861,7 @@
     "ret_21d": 0.03146277193632008,
     "vol_ratio": 0.4365219806821685,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-06-24",
@@ -4869,7 +4869,7 @@
     "ret_21d": 0.031957755229618856,
     "vol_ratio": 0.4664499469295986,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-06-25",
@@ -4885,7 +4885,7 @@
     "ret_21d": 0.024556775716928714,
     "vol_ratio": 0.47209115010841923,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-06-29",
@@ -5085,7 +5085,7 @@
     "ret_21d": 0.025985536350650706,
     "vol_ratio": 0.9252290754079161,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-08-04",
@@ -5093,7 +5093,7 @@
     "ret_21d": 0.02680566021235231,
     "vol_ratio": 1.039855346418563,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-08-05",
@@ -5101,7 +5101,7 @@
     "ret_21d": 0.03011392596368112,
     "vol_ratio": 1.0468194060868803,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-08-06",
@@ -5109,7 +5109,7 @@
     "ret_21d": 0.022579200162944346,
     "vol_ratio": 1.0504531948931861,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-08-09",
@@ -5405,7 +5405,7 @@
     "ret_21d": 0.02836478642760354,
     "vol_ratio": 1.0624232966636755,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-01",
@@ -5413,7 +5413,7 @@
     "ret_21d": 0.02669208879291407,
     "vol_ratio": 1.016970824764581,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-04",
@@ -5421,7 +5421,7 @@
     "ret_21d": 0.026522897793885614,
     "vol_ratio": 1.023201104789843,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-05",
@@ -5429,7 +5429,7 @@
     "ret_21d": 0.02878738732827313,
     "vol_ratio": 1.0097411866894215,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-06",
@@ -5445,7 +5445,7 @@
     "ret_21d": 0.024665795591263473,
     "vol_ratio": 1.0681928343894669,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-08",
@@ -5453,7 +5453,7 @@
     "ret_21d": 0.031215559901460743,
     "vol_ratio": 1.0888481254415,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-11",
@@ -5461,7 +5461,7 @@
     "ret_21d": 0.033202309757185855,
     "vol_ratio": 1.1261918733301735,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-12",
@@ -5517,7 +5517,7 @@
     "ret_21d": 0.03508140356309086,
     "vol_ratio": 1.1368176987623173,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-22",
@@ -5525,7 +5525,7 @@
     "ret_21d": 0.032385098429020376,
     "vol_ratio": 1.143305125889409,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-25",
@@ -5541,7 +5541,7 @@
     "ret_21d": 0.023256401655953107,
     "vol_ratio": 1.0394241587436706,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-10-27",
@@ -5605,7 +5605,7 @@
     "ret_21d": 0.02394598102969514,
     "vol_ratio": 1.238135283856725,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2021-11-09",
@@ -5653,7 +5653,7 @@
     "ret_21d": -0.018504818976588178,
     "vol_ratio": 1.188112226411553,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-11-17",
@@ -5861,7 +5861,7 @@
     "ret_21d": -0.019664092638977615,
     "vol_ratio": 1.292653732867253,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2021-12-24",
@@ -5917,7 +5917,7 @@
     "ret_21d": 0.024946647873694827,
     "vol_ratio": 1.0864828395673611,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-01-04",
@@ -5957,7 +5957,7 @@
     "ret_21d": 0.028096142379485656,
     "vol_ratio": 0.9524140621761449,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-01-11",
@@ -6029,7 +6029,7 @@
     "ret_21d": 0.03189618416113804,
     "vol_ratio": 0.7660978520522388,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-01-24",
@@ -6477,7 +6477,7 @@
     "ret_21d": 0.03064576550591136,
     "vol_ratio": 0.7582934599006881,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-04-19",
@@ -6781,7 +6781,7 @@
     "ret_21d": 0.024911424891668865,
     "vol_ratio": 1.1006370122620788,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-06-13",
@@ -6925,7 +6925,7 @@
     "ret_21d": -0.025983231037179366,
     "vol_ratio": 0.9278352504293359,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2022-07-07",
@@ -7229,7 +7229,7 @@
     "ret_21d": 0.022412004793612494,
     "vol_ratio": 0.9619537075794904,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-09-02",
@@ -7269,7 +7269,7 @@
     "ret_21d": 0.02306365857163395,
     "vol_ratio": 0.9593059787665316,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-09-09",
@@ -7285,7 +7285,7 @@
     "ret_21d": 0.022903070153552196,
     "vol_ratio": 0.970052137562322,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-09-13",
@@ -7293,7 +7293,7 @@
     "ret_21d": 0.023277126748400212,
     "vol_ratio": 1.0050103570642726,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-09-14",
@@ -7317,7 +7317,7 @@
     "ret_21d": -0.023038042304638018,
     "vol_ratio": 1.0900580828211315,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2022-09-19",
@@ -7413,7 +7413,7 @@
     "ret_21d": -0.022161463544609128,
     "vol_ratio": 1.0753040687392563,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2022-10-06",
@@ -7749,7 +7749,7 @@
     "ret_21d": 0.029011163347574698,
     "vol_ratio": 0.7330742754458907,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-12-07",
@@ -7765,7 +7765,7 @@
     "ret_21d": 0.02491323508151133,
     "vol_ratio": 0.7504745053921015,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-12-09",
@@ -7773,7 +7773,7 @@
     "ret_21d": 0.025981540637616485,
     "vol_ratio": 0.745726461587004,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2022-12-12",
@@ -7869,7 +7869,7 @@
     "ret_21d": -0.02318887119365398,
     "vol_ratio": 0.9035306586921409,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2022-12-28",
@@ -7909,7 +7909,7 @@
     "ret_21d": -0.025052068222269464,
     "vol_ratio": 0.9730582397178047,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-01-04",
@@ -7973,7 +7973,7 @@
     "ret_21d": -0.02488749716416172,
     "vol_ratio": 1.197005622004286,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-01-16",
@@ -8061,7 +8061,7 @@
     "ret_21d": -0.024476278852209377,
     "vol_ratio": 1.0606925312570519,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-02-01",
@@ -8205,7 +8205,7 @@
     "ret_21d": -0.023817887715297914,
     "vol_ratio": 1.0645598770367424,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-02-27",
@@ -8277,7 +8277,7 @@
     "ret_21d": -0.025671807840390137,
     "vol_ratio": 0.9817275594014455,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-03-13",
@@ -8445,7 +8445,7 @@
     "ret_21d": 0.02383862539054582,
     "vol_ratio": 1.006621622849212,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-04-17",
@@ -8613,7 +8613,7 @@
     "ret_21d": 0.02571797172986323,
     "vol_ratio": 0.779894217029998,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-05-17",
@@ -8629,7 +8629,7 @@
     "ret_21d": 0.026602198607232452,
     "vol_ratio": 0.8062151482223793,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-05-19",
@@ -8741,7 +8741,7 @@
     "ret_21d": 0.025208171026904314,
     "vol_ratio": 0.6694441064181341,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-06-08",
@@ -8781,7 +8781,7 @@
     "ret_21d": 0.025669230887539918,
     "vol_ratio": 0.8144722907697943,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-06-15",
@@ -8829,7 +8829,7 @@
     "ret_21d": 0.026570356623095703,
     "vol_ratio": 0.8521029742578399,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-06-23",
@@ -9213,7 +9213,7 @@
     "ret_21d": -0.02431138751044437,
     "vol_ratio": 0.8870709146515029,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-09-01",
@@ -9269,7 +9269,7 @@
     "ret_21d": 0.023192329213866048,
     "vol_ratio": 0.8427504723279852,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-09-12",
@@ -9317,7 +9317,7 @@
     "ret_21d": 0.026183936529478702,
     "vol_ratio": 0.7916409420118939,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2023-09-21",
@@ -9493,7 +9493,7 @@
     "ret_21d": -0.02333053656168038,
     "vol_ratio": 1.0280640371508074,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-10-25",
@@ -9533,7 +9533,7 @@
     "ret_21d": -0.022739263817797006,
     "vol_ratio": 1.2510234635370792,
     "cluster": 1,
-    "regime": "bear"
+    "regime": "sideways"
   },
   {
     "date": "2023-11-01",
@@ -9909,7 +9909,7 @@
     "ret_21d": 0.02744233063560908,
     "vol_ratio": 1.007769121424091,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-01-10",
@@ -9949,7 +9949,7 @@
     "ret_21d": 0.026828530089511027,
     "vol_ratio": 1.0133491736572717,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-01-17",
@@ -9973,7 +9973,7 @@
     "ret_21d": 0.02232844643077958,
     "vol_ratio": 1.1052493110080137,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-01-23",
@@ -10125,7 +10125,7 @@
     "ret_21d": 0.025510016534420865,
     "vol_ratio": 1.2684164243483005,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-02-20",
@@ -10205,7 +10205,7 @@
     "ret_21d": 0.025249558813514428,
     "vol_ratio": 0.8283630881713763,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-03-05",
@@ -10213,7 +10213,7 @@
     "ret_21d": 0.02685144400656303,
     "vol_ratio": 0.8155421383580521,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-03-06",
@@ -10221,7 +10221,7 @@
     "ret_21d": 0.02483653820547893,
     "vol_ratio": 0.8485425210670581,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-03-07",
@@ -10229,7 +10229,7 @@
     "ret_21d": 0.02567432485579446,
     "vol_ratio": 0.8420390686181483,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-03-11",
@@ -10245,7 +10245,7 @@
     "ret_21d": 0.025396498048892546,
     "vol_ratio": 0.8093598679122516,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-03-13",
@@ -10349,7 +10349,7 @@
     "ret_21d": 0.02287581205035427,
     "vol_ratio": 0.9931016173569852,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-04-03",
@@ -10372,7 +10372,7 @@
     "close": 22513.69921875,
     "ret_21d": 0.004824669335328435,
     "vol_ratio": 0.8192554297354508,
-    "cluster": 2,
+    "cluster": 1,
     "regime": "sideways"
   },
   {
@@ -10453,7 +10453,7 @@
     "ret_21d": 0.025234424782199394,
     "vol_ratio": 0.8545385674185723,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-04-24",
@@ -10461,7 +10461,7 @@
     "ret_21d": 0.02579322368254533,
     "vol_ratio": 0.7848222589772667,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-04-25",
@@ -10469,7 +10469,7 @@
     "ret_21d": 0.025368057370827923,
     "vol_ratio": 0.8386083330494419,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-04-26",
@@ -10597,7 +10597,7 @@
     "ret_21d": 0.024240990066041412,
     "vol_ratio": 1.0108157973842646,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-05-22",
@@ -10629,7 +10629,7 @@
     "ret_21d": 0.02366035866169125,
     "vol_ratio": 1.028754261251107,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-05-28",
@@ -10693,7 +10693,7 @@
     "ret_21d": 0.023266467464409857,
     "vol_ratio": 1.5602207179640817,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-06-07",
@@ -10781,7 +10781,7 @@
     "ret_21d": 0.024826188532665272,
     "vol_ratio": 1.580286818012886,
     "cluster": 1,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-06-25",
@@ -11125,7 +11125,7 @@
     "ret_21d": 0.024768398460842,
     "vol_ratio": 0.8170180056216945,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-08-27",
@@ -11173,7 +11173,7 @@
     "ret_21d": 0.02274282835348096,
     "vol_ratio": 0.7736913316458558,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-09-04",
@@ -11197,7 +11197,7 @@
     "ret_21d": 0.022827467460644124,
     "vol_ratio": 0.8664540136853675,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-09-09",
@@ -11221,7 +11221,7 @@
     "ret_21d": 0.023471032108678624,
     "vol_ratio": 0.8460093785875679,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-09-12",
@@ -11269,7 +11269,7 @@
     "ret_21d": 0.026063640296090318,
     "vol_ratio": 0.8069746920474823,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-09-20",
@@ -11325,7 +11325,7 @@
     "ret_21d": 0.022782988118133174,
     "vol_ratio": 0.9061877953487616,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2024-10-01",
@@ -11429,7 +11429,7 @@
     "ret_21d": -0.02062846822817843,
     "vol_ratio": 1.0100084676887113,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2024-10-21",
@@ -11533,7 +11533,7 @@
     "ret_21d": -0.021152857641367206,
     "vol_ratio": 0.8838567421980336,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2024-11-07",
@@ -11789,7 +11789,7 @@
     "ret_21d": -0.020405087628520557,
     "vol_ratio": 1.0031451395915956,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2024-12-26",
@@ -11821,7 +11821,7 @@
     "ret_21d": -0.020152369183212504,
     "vol_ratio": 0.8785911659591844,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2025-01-01",
@@ -12013,7 +12013,7 @@
     "ret_21d": -0.021770674944542212,
     "vol_ratio": 0.9351310765717588,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2025-02-03",
@@ -12701,7 +12701,7 @@
     "ret_21d": 0.022908404762671086,
     "vol_ratio": 0.7068299149942792,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2025-06-12",
@@ -13404,7 +13404,7 @@
     "close": 25585.30078125,
     "ret_21d": 0.013716859049377694,
     "vol_ratio": 0.9643069357223057,
-    "cluster": 2,
+    "cluster": 1,
     "regime": "sideways"
   },
   {
@@ -13541,7 +13541,7 @@
     "ret_21d": 0.023351513069689966,
     "vol_ratio": 0.9318396746532435,
     "cluster": 2,
-    "regime": "bull"
+    "regime": "sideways"
   },
   {
     "date": "2025-11-13",
@@ -13965,7 +13965,7 @@
     "ret_21d": -0.02016795967281404,
     "vol_ratio": 1.141150950602642,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2026-01-30",
@@ -13997,7 +13997,7 @@
     "ret_21d": -0.020986752588125768,
     "vol_ratio": 1.3714577952563107,
     "cluster": 1,
-    "regime": "sideways"
+    "regime": "bear"
   },
   {
     "date": "2026-02-05",
@@ -14604,6 +14604,30 @@
     "close": 23382.599609375,
     "ret_21d": -0.03288370740765967,
     "vol_ratio": 0.6757176097314274,
+    "cluster": 1,
+    "regime": "bear"
+  },
+  {
+    "date": "2026-06-02",
+    "close": 23483.55078125,
+    "ret_21d": -0.02141885247729547,
+    "vol_ratio": 0.6661001704741188,
+    "cluster": 1,
+    "regime": "sideways"
+  },
+  {
+    "date": "2026-06-03",
+    "close": 23405.599609375,
+    "ret_21d": -0.029590458626803207,
+    "vol_ratio": 0.6667426256561167,
+    "cluster": 1,
+    "regime": "bear"
+  },
+  {
+    "date": "2026-06-05",
+    "close": 23496.599609375,
+    "ret_21d": -0.022311222764070604,
+    "vol_ratio": 0.6587675160178897,
     "cluster": 1,
     "regime": "bear"
   }

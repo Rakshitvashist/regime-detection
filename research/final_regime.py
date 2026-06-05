@@ -133,7 +133,7 @@ def main():
     with open(OUTPUT_PATH, "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"Final regime saved to {OUTPUT_PATH} 🚀")
+    print(f"Final regime saved to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

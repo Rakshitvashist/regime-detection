@@ -1,66 +1,97 @@
 # update_pipeline.ps1
 # ---------------------------------------------------------
 # Manual script to update data, retrain models, and deploy.
+#
+# Pipeline per in-sample instrument:
+#   Rust core (features)  ->  kmeans_regime (causal labels)
+#     ->  xgb_regime (train + walk-forward OOF history for the dashboard)
+#     ->  export_model_metrics (Model-tab diagnostics)
+# Cross-instrument OOS predictions reuse the trained models on other series.
+#
+# Note: xgb_regime.py now writes the served frontend file itself using
+# out-of-fold (honest) predictions, so the old in-sample predict.py calls are
+# gone. predict.py remains a standalone in-sample/live inference utility.
 # ---------------------------------------------------------
 
-$DataPath = "D:\locale\data"
 $Python = ".\.venv\Scripts\python.exe"
+$Data = "frontend/frontend/public/data"
+
+# Abort the whole run if any step fails, instead of committing/pushing
+# half-updated or stale outputs (previously every step ran unconditionally and
+# the script always reached git push, even after a failure).
+$ErrorActionPreference = "Stop"
+
+function Invoke-Step {
+    param([string]$Label, [scriptblock]$Action)
+    Write-Host "  -> $Label" -ForegroundColor DarkGray
+    & $Action
+    if ($LASTEXITCODE -ne $null -and $LASTEXITCODE -ne 0) {
+        throw "Step failed (exit $LASTEXITCODE): $Label"
+    }
+}
 
 Write-Host "--- Starting Regime Detection Update Pipeline ---" -ForegroundColor Cyan
 
 # 0. Fetch Latest Data
 Write-Host "`n[0/4] Fetching latest data from Yahoo Finance..." -ForegroundColor Yellow
-& $Python fetch_data.py
+Invoke-Step "fetch_data.py" { & $Python fetch_data.py }
 
-# 1. NIFTY
-Write-Host "`n[1/4] Processing NIFTY..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "NSE_NIFTY, 1D.csv" NIFTY "2019-01-01"
-& $Python research/kmeans_regime.py --input output/features_NIFTY.json --output output/regime_clustered_NIFTY.json --symbol NIFTY
-& $Python research/xgb_regime.py --input output/features_NIFTY.json --model-out output/xgb_model_NIFTY.pkl --symbol NIFTY
-& $Python predict.py --input output/features_NIFTY.json --model output/xgb_model_NIFTY.pkl --symbol NIFTY
+# --- Helper: full per-symbol in-sample build (features -> labels -> train -> metrics) ---
+function Build-Instrument($csv, $symbol, $start) {
+    Write-Host "`nProcessing $symbol..." -ForegroundColor Yellow
+    Invoke-Step "core features ($symbol)" { cargo run --manifest-path core/Cargo.toml --release -- "$csv" $symbol "$start" }
+    Invoke-Step "kmeans labels ($symbol)" { & $Python research/kmeans_regime.py --input "output/features_$symbol.json" --output "output/regime_clustered_$symbol.json" --symbol $symbol }
+    Invoke-Step "xgb train ($symbol)" { & $Python research/xgb_regime.py --input "output/features_$symbol.json" --model-out "output/xgb_model_$symbol.pkl" --labels "output/regime_clustered_$symbol.json" --symbol $symbol }
+    Invoke-Step "model metrics ($symbol)" { & $Python research/export_model_metrics.py --model "output/xgb_model_$symbol.pkl" --input "output/features_$symbol.json" --symbol $symbol --json-out "$Data/metrics_$symbol.json" --predictions "$Data/regime_$symbol.json" }
+    # Multi-horizon forward forecaster (5/10/15/21d) + deploy gate -> forecast_<symbol>.json
+    Invoke-Step "horizon forecast ($symbol)" { & $Python research/forecast_horizons.py --input "output/features_$symbol.json" --symbol $symbol --json-out "$Data/forecast_$symbol.json" }
+}
 
-# 2. BANKNIFTY
-Write-Host "`n[2/4] Processing BANKNIFTY..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "NSE_BANKNIFTY, 1D.csv" BANKNIFTY "2019-01-01"
-& $Python research/kmeans_regime.py --input output/features_BANKNIFTY.json --output output/regime_clustered_BANKNIFTY.json --symbol BANKNIFTY
-& $Python research/xgb_regime.py --input output/features_BANKNIFTY.json --model-out output/xgb_model_BANKNIFTY.pkl --symbol BANKNIFTY
-& $Python predict.py --input output/features_BANKNIFTY.json --model output/xgb_model_BANKNIFTY.pkl --symbol BANKNIFTY
+# 1-3. In-sample instruments
+Build-Instrument "NSE_NIFTY, 1D.csv"     "NIFTY"     "2019-01-01"
+Build-Instrument "NSE_BANKNIFTY, 1D.csv" "BANKNIFTY" "2019-01-01"
+Build-Instrument "NSE_CNX500, 1D.csv"    "NIFTY_500" "2019-01-01"
 
-# 3. NIFTY_500
-Write-Host "`n[3/4] Processing NIFTY_500..." -ForegroundColor Yellow
-cargo run --manifest-path core/Cargo.toml --release -- "NSE_CNX500, 1D.csv" NIFTY_500 "2019-01-01"
-& $Python research/kmeans_regime.py --input output/features_NIFTY_500.json --output output/regime_clustered_NIFTY_500.json --symbol NIFTY_500
-& $Python research/xgb_regime.py --input output/features_NIFTY_500.json --model-out output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
-& $Python predict.py --input output/features_NIFTY_500.json --model output/xgb_model_NIFTY_500.pkl --symbol NIFTY_500
-
-# 4. Cross-Asset OOS Experiments (Oil & Forex)
+# 4. Cross-Asset OOS Experiments (Oil & Forex) - features only, no labels
 Write-Host "`n[4/4] Processing Cross-Asset OOS (Oil & Forex)..." -ForegroundColor Yellow
+Invoke-Step "core features (CRUDE)"  { cargo run --manifest-path core/Cargo.toml --release -- "MCX_CRUDEOIL1!, 1D.csv" CRUDE  "2019-01-01" }
+Invoke-Step "core features (WTI)"    { cargo run --manifest-path core/Cargo.toml --release -- "CFI_WTI, 1D.csv"        WTI    "2019-01-01" }
+Invoke-Step "core features (USDINR)" { cargo run --manifest-path core/Cargo.toml --release -- "FX_IDC_USDINR, 1D.csv"  USDINR "2019-01-01" }
 
-# Generate Features
-cargo run --manifest-path core/Cargo.toml --release -- "MCX_CRUDEOIL1!, 1D.csv" CRUDE "2019-01-01"
-cargo run --manifest-path core/Cargo.toml --release -- "CFI_WTI, 1D.csv" WTI "2019-01-01"
-cargo run --manifest-path core/Cargo.toml --release -- "FX_IDC_USDINR, 1D.csv" USDINR "2019-01-01"
+# predict_oos.py: trained-model -> target-series. Each tuple is (model, input, symbol, trainedOn, out).
+$OOS = @(
+    @("NIFTY",     "CRUDE",     "regime_NIFTY_on_CRUDE.json"),
+    @("NIFTY",     "WTI",       "regime_NIFTY_on_WTI.json"),
+    @("NIFTY",     "USDINR",    "regime_NIFTY_on_USDINR.json"),
+    @("NIFTY_500", "CRUDE",     "regime_NIFTY500_on_CRUDE.json"),
+    @("NIFTY_500", "WTI",       "regime_NIFTY500_on_WTI.json"),
+    @("NIFTY_500", "USDINR",    "regime_NIFTY500_on_USDINR.json"),
+    @("BANKNIFTY", "NIFTY",     "regime_BANKNIFTY_on_NIFTY.json"),
+    @("BANKNIFTY", "NIFTY_500", "regime_BANKNIFTY_on_NIFTY500.json"),
+    @("NIFTY_500", "NIFTY",     "regime_NIFTY500_on_NIFTY.json"),
+    @("NIFTY_500", "BANKNIFTY", "regime_NIFTY500_on_BANKNIFTY.json"),
+    @("NIFTY",     "NIFTY_500", "regime_NIFTY_on_NIFTY500.json"),
+    @("NIFTY",     "BANKNIFTY", "regime_NIFTY_on_BANKNIFTY.json")
+)
+foreach ($o in $OOS) {
+    $trainedOn = $o[0]; $target = $o[1]; $out = $o[2]
+    Invoke-Step "OOS $trainedOn -> $target" {
+        & $Python research/predict_oos.py --model "output/xgb_model_$trainedOn.pkl" --input "output/features_$target.json" --symbol $target --trained-on $trainedOn --json-out "$Data/$out"
+    }
+}
 
-# Predictions: NIFTY model on Oil & FX
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_CRUDE.json --symbol CRUDE --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_CRUDE.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_WTI.json --symbol WTI --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_WTI.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY.pkl --input output/features_USDINR.json --symbol USDINR --trained-on NIFTY --json-out frontend/frontend/public/data/regime_NIFTY_on_USDINR.json
-
-# Predictions: NIFTY_500 model on Oil & FX
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_CRUDE.json --symbol CRUDE --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_CRUDE.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_WTI.json --symbol WTI --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_WTI.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_USDINR.json --symbol USDINR --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_USDINR.json
-
-# --- Deploy & Commit ---
-& $Python research/predict_oos.py --model output/xgb_model_BANKNIFTY.pkl --input output/features_NIFTY.json --symbol NIFTY --trained-on BANKNIFTY --json-out frontend/frontend/public/data/regime_BANKNIFTY_on_NIFTY.json
-& $Python research/predict_oos.py --model output/xgb_model_BANKNIFTY.pkl --input output/features_NIFTY_500.json --symbol NIFTY_500 --trained-on BANKNIFTY --json-out frontend/frontend/public/data/regime_BANKNIFTY_on_NIFTY500.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_NIFTY.json --symbol NIFTY --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_NIFTY.json
-& $Python research/predict_oos.py --model output/xgb_model_NIFTY_500.pkl --input output/features_BANKNIFTY.json --symbol BANKNIFTY --trained-on NIFTY_500 --json-out frontend/frontend/public/data/regime_NIFTY500_on_BANKNIFTY.json
-
-# 5. Deployment
+# 5. Deployment - only commit/push when every step above succeeded AND there are
+# actually changes to commit (a no-op commit otherwise aborts under -Stop).
 Write-Host "`n--- Pushing Updates to GitHub ---" -ForegroundColor Cyan
-git add .
-git commit -m "Manual pipeline update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-git push --set-upstream origin main
+git add -A
+$pending = git status --porcelain
+if ([string]::IsNullOrWhiteSpace($pending)) {
+    Write-Host "No changes to commit - skipping push." -ForegroundColor Yellow
+} else {
+    git commit -m "Manual pipeline update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+    if ($LASTEXITCODE -ne 0) { throw "git commit failed" }
+    git push --set-upstream origin main
+    if ($LASTEXITCODE -ne 0) { throw "git push failed" }
+}
 
 Write-Host "`nPipeline completed successfully! [DONE]" -ForegroundColor Green

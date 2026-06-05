@@ -37,7 +37,8 @@ const ShieldIcon = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="n
 export default function Page() {
   const [history, setHistory] = useState<any[]>([]);
   const [index, setIndex] = useState<number>(0);
-  const [view, setView] = useState<'dashboard' | 'analyzer' | 'forecast' | 'model'>('dashboard');
+  const [view, setView] = useState<'dashboard' | 'analyzer' | 'forecast' | 'horizons' | 'model'>('dashboard');
+  const [forecastData, setForecastData] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [primaryFile, setPrimaryFile] = useState<string>("NIFTY_500");
   const [confidenceFilter, setConfidenceFilter] = useState(0.5);
@@ -92,6 +93,16 @@ export default function Page() {
           }
         } catch {
           setModelMetrics(null);
+        }
+
+        // Multi-horizon forward forecast (in-sample symbols only; OOS series
+        // have no forecast file, so this stays null and the tab shows a notice).
+        try {
+          const fSymbol = (entry as any)?.trainedOn ?? symbol;
+          const fcResp = await fetch(`data/forecast_${fSymbol}.json?t=${Date.now()}`);
+          setForecastData(fcResp.ok ? await fcResp.json() : null);
+        } catch {
+          setForecastData(null);
         }
       }
     } catch (err) {
@@ -313,6 +324,7 @@ export default function Page() {
     { id: "dashboard", label: "Dashboard" },
     { id: "analyzer", label: "Performance" },
     { id: "forecast", label: "Checklist" },
+    { id: "horizons", label: "Forecast" },
     { id: "model", label: "Model Visualisation" }
   ];
 
@@ -841,6 +853,73 @@ export default function Page() {
                          </div>
                        )}
                     </div>
+                 </div>
+               )}
+
+               {view === 'horizons' && (
+                 <div className="flex flex-col py-8 gap-8 pb-20">
+                   {!forecastData ? (
+                     <div className="bg-white rounded-2xl p-10 border border-zinc-200/90 text-center text-sm text-zinc-500">
+                       No forward forecast for this series. Multi-horizon forecasts are generated for in-sample instruments (NIFTY 50, BANK NIFTY, NIFTY 500).
+                     </div>
+                   ) : (
+                     <>
+                       {/* Headline deployment gauge */}
+                       <div className="bg-zinc-900 text-white rounded-2xl p-8 sm:p-10 shadow-lg relative overflow-hidden">
+                         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] to-transparent pointer-events-none" />
+                         <div className="flex flex-wrap items-end justify-between gap-6 relative">
+                           <div>
+                             <span className="text-[11px] font-medium text-zinc-400 block mb-2">Recommended deployment · as of {forecastData.as_of}</span>
+                             <div className="text-6xl font-semibold tracking-tight tabular-nums">{forecastData.headline_deploy_pct}%</div>
+                             <span className="text-[11px] text-zinc-400 mt-2 block">
+                               {forecastData.max_trusted_horizon > 0
+                                 ? `Forecast trusted out to ${forecastData.max_trusted_horizon} trading days`
+                                 : 'No horizon beats its baseline — model stands aside (neutral allocation)'}
+                             </span>
+                           </div>
+                           <div className="w-full sm:w-64">
+                             <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                               <div className="h-full bg-emerald-500" style={{ width: `${forecastData.headline_deploy_pct}%` }} />
+                             </div>
+                             <div className="flex justify-between text-[10px] text-zinc-500 mt-1"><span>Defensive</span><span>Full</span></div>
+                           </div>
+                         </div>
+                       </div>
+
+                       {/* Horizon ladder: 5 / 10 / 15 / 21 day */}
+                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                         {forecastData.horizons.map((h: any) => {
+                           const rc = h.forecast_regime === 'bull' ? 'text-emerald-600'
+                             : h.forecast_regime === 'bear' ? 'text-rose-600' : 'text-zinc-500';
+                           const trustCls = h.trust === 'GREEN' ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                             : h.trust === 'AMBER' ? 'bg-amber-50 text-amber-700 border-amber-200'
+                             : 'bg-zinc-100 text-zinc-500 border-zinc-200';
+                           const dim = h.trust === 'RED' ? 'opacity-60' : '';
+                           return (
+                             <div key={h.horizon} className={`bg-white rounded-2xl p-6 border border-zinc-200/90 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${dim}`}>
+                               <div className="flex items-center justify-between mb-4">
+                                 <span className="text-[13px] font-semibold text-zinc-900">{h.horizon}-day</span>
+                                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-lg border ${trustCls}`}>{h.trust}</span>
+                               </div>
+                               <div className={`text-3xl font-semibold capitalize tracking-tight mb-1 ${rc}`}>{h.forecast_regime}</div>
+                               <div className="text-[11px] text-zinc-400 mb-4">{(h.confidence * 100).toFixed(0)}% confidence</div>
+                               <div className="space-y-1.5 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3">
+                                 <div className="flex justify-between"><span>Backtest acc</span><span className="tabular-nums text-zinc-700">{(h.oof_accuracy * 100).toFixed(1)}%</span></div>
+                                 <div className="flex justify-between"><span>Baseline</span><span className="tabular-nums">{(h.baseline * 100).toFixed(1)}%</span></div>
+                                 <div className="flex justify-between"><span>Edge</span><span className={`tabular-nums font-semibold ${h.skill >= 0 ? 'text-emerald-600' : 'text-rose-600'}`}>{h.skill >= 0 ? '+' : ''}{(h.skill * 100).toFixed(1)}%</span></div>
+                                 <div className="flex justify-between pt-1"><span>Deploy</span><span className="tabular-nums font-semibold text-zinc-900">{h.deploy_pct}%</span></div>
+                               </div>
+                             </div>
+                           );
+                         })}
+                       </div>
+
+                       {/* Honest reading guide */}
+                       <div className="px-5 py-4 rounded-xl bg-zinc-50 border border-zinc-200/80 text-[11px] text-zinc-500 leading-relaxed">
+                         <span className="font-bold text-zinc-700">How to read this:</span> each horizon is an independent model predicting the forward-return bucket that many days out, validated by walk-forward backtest. <span className="text-emerald-700 font-semibold">GREEN</span> beats its naive baseline by ≥8 pts (trust it); <span className="text-amber-700 font-semibold">AMBER</span> is a marginal edge; <span className="text-zinc-600 font-semibold">RED</span> means no edge over guessing the majority class, so the deploy collapses to a neutral 65% (stand aside). Short horizons are usually more reliable than long ones.
+                       </div>
+                     </>
+                   )}
                  </div>
                )}
 

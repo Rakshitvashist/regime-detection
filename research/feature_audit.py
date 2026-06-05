@@ -1,13 +1,22 @@
+import argparse
 import json
 import pandas as pd
 import numpy as np
 from xgboost import XGBClassifier
 import os
 
-# Paths
-BASE_DIR = r"c:\Users\PC2539\Developement\Regime_Detection"
-INPUT_PATH = os.path.join(BASE_DIR, "output", "features.json")
-LABEL_PATH = os.path.join(BASE_DIR, "output", "regime_clustered.json")
+# Paths are derived from this file's location (repo root = parent of research/)
+# instead of a machine-specific absolute path.
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+_p = argparse.ArgumentParser(description="Feature redundancy / importance audit")
+_p.add_argument("--symbol", default="NIFTY", help="Instrument to audit")
+_p.add_argument("--input", default=None, help="Features JSON (defaults to per-symbol)")
+_p.add_argument("--labels", default=None, help="Clustered labels JSON (defaults to per-symbol)")
+_args, _ = _p.parse_known_args()
+
+INPUT_PATH = _args.input or os.path.join(BASE_DIR, "output", f"features_{_args.symbol}.json")
+LABEL_PATH = _args.labels or os.path.join(BASE_DIR, "output", f"regime_clustered_{_args.symbol}.json")
 LABEL_SHIFT = 21
 
 XGB_FEATURES = [

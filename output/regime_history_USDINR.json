@@ -15424,11 +15424,43 @@
     "vol_ratio": 0.6729539935083971
   },
   {
-    "close": 94.98999786376953,
+    "close": 95.00299835205078,
     "date": "2026-06-01",
     "regime": "sideways_low_vol",
-    "ret_21d": 0.002436662985854099,
+    "ret_21d": 0.002573858126215578,
     "symbol": "USDINR",
     "vol_ratio": 0.6711629188102552
+  },
+  {
+    "close": 95.55139923095703,
+    "date": "2026-06-02",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.006832232425332707,
+    "symbol": "USDINR",
+    "vol_ratio": 0.7707702446316018
+  },
+  {
+    "close": 95.26300048828125,
+    "date": "2026-06-03",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.00003780282303789129,
+    "symbol": "USDINR",
+    "vol_ratio": 0.7913834967068623
+  },
+  {
+    "close": 96.16449737548828,
+    "date": "2026-06-04",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.010311702006744916,
+    "symbol": "USDINR",
+    "vol_ratio": 0.7899902515382718
+  },
+  {
+    "close": 95.50499725341797,
+    "date": "2026-06-05",
+    "regime": "sideways_low_vol",
+    "ret_21d": 0.009481180536851097,
+    "symbol": "USDINR",
+    "vol_ratio": 0.8445297407058617
   }
 ]

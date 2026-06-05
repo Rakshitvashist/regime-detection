@@ -1,10 +1,17 @@
 import argparse
 import json
+import os
 import pickle
+import sys
+
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from xgboost import XGBClassifier
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = _HERE if os.path.exists(os.path.join(_HERE, "regime_features.py")) else os.path.dirname(_HERE)
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
+from regime_features import XGB_FEATURES, add_structural_features  # noqa: E402
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -14,32 +21,6 @@ def parse_args():
     p.add_argument("--json-out", required=True)
     p.add_argument("--predictions", required=False, help="Path to regime predictions json for actual labels")
     return p.parse_args()
-
-XGB_FEATURES = [
-    "ret_10d", "vol_21d", "vol_ratio", "skew_21d", "kurt_21d",
-    "rsi_14", "rsi_21", "macd_h", "bb_pct", "ema_gap", "adx",
-    "drawdown_21d", "mom_divergence", "vol_spike", "dist_from_252h",
-    "tii_21", "vol_of_vol_21"
-]
-
-def add_structural_features(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.copy()
-    if "vol_21d" not in df.columns:
-        df["vol_21d"] = df["close"].pct_change().rolling(21).std() * np.sqrt(252)
-    rolling_max_21 = df["close"].rolling(21, min_periods=1).max()
-    rolling_max_252 = df["close"].rolling(252, min_periods=1).max()
-    df["drawdown_21d"] = (df["close"] - rolling_max_21) / rolling_max_21
-    df["dist_from_252h"] = (df["close"] - rolling_max_252) / rolling_max_252
-    if "ret_21d" not in df.columns: df["ret_21d"] = df["close"].pct_change(21)
-    df["mom_divergence"] = df["ret_10d"] - df["ret_21d"]
-    df["vol_spike"] = df["vol_21d"] / df["vol_21d"].rolling(63, min_periods=1).mean()
-    sma21 = df["close"].rolling(21, min_periods=1).mean()
-    df["tii_21"] = df["close"].rolling(21).apply(lambda x: (x > sma21.iloc[x.index[-1]]).sum() / 21.0, raw=False)
-    df["vol_of_vol_21"] = df["vol_21d"].rolling(21, min_periods=1).std()
-    
-    fix_cols = ["drawdown_21d", "dist_from_252h", "mom_divergence", "vol_spike", "tii_21", "vol_of_vol_21", "vol_21d", "ret_21d"]
-    df[fix_cols] = df[fix_cols].replace([np.inf, -np.inf], np.nan).fillna(0)
-    return df
 
 def main():
     args = parse_args()
@@ -133,8 +114,8 @@ def main():
                 # Classes in model: 0=Bear, 1=Sideways, 2=Bull
                 idx = predict_df.index.get_loc(i)
                 p = probs_all[idx]
-                predicted_val = 0.0 * p[0] + 0.5 * p[1] + 1.0 * p[2]
-                residual = actual_val - predicted_val
+                predicted_val = float(0.0 * p[0] + 0.5 * p[1] + 1.0 * p[2])
+                residual = float(actual_val - predicted_val)
                 predictions_data.append({
                     "actual": actual_val,
                     "predicted": predicted_val,
@@ -205,7 +186,7 @@ def main():
     
     with open(args.json_out, "w") as f:
         json.dump(out, f, indent=2)
-    print(f"✅ Generated deep metrics -> {args.json_out}")
+    print(f"[OK] Generated deep metrics -> {args.json_out}")
 
 if __name__ == "__main__":
     main()
