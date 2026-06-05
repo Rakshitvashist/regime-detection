@@ -1,60 +1,60 @@
 {
   "symbol": "NIFTY_500",
   "as_of": "2026-06-05",
-  "close": 22602.44921875,
+  "close": 22424.05078125,
   "detection": {
-    "regime": "sideways",
-    "confidence": 0.9972,
-    "prob_bear": 0.0014,
-    "prob_sideways": 0.9972,
-    "prob_bull": 0.0014,
-    "oof_accuracy": 0.8916,
+    "regime": "bear",
+    "confidence": 0.9742,
+    "prob_bear": 0.9742,
+    "prob_sideways": 0.0236,
+    "prob_bull": 0.0022,
+    "oof_accuracy": 0.8924,
     "baseline": 0.4542,
     "n_eval": 1310
   },
   "risk": [
     {
       "horizon": 5,
-      "storm_prob": 0.512,
-      "outlook": "stormy",
-      "auc": 0.6555,
-      "balanced_acc": 0.6074,
-      "storm_recall": 0.5274,
+      "storm_prob": 0.2836,
+      "outlook": "calm",
+      "auc": 0.656,
+      "balanced_acc": 0.6139,
+      "storm_recall": 0.5446,
       "trust": "GREEN",
       "n_eval": 1305
     },
     {
       "horizon": 10,
-      "storm_prob": 0.4364,
+      "storm_prob": 0.3654,
       "outlook": "calm",
-      "auc": 0.6017,
-      "balanced_acc": 0.5969,
-      "storm_recall": 0.5651,
+      "auc": 0.6024,
+      "balanced_acc": 0.5924,
+      "storm_recall": 0.5609,
       "trust": "AMBER",
       "n_eval": 1300
     },
     {
       "horizon": 15,
-      "storm_prob": 0.571,
+      "storm_prob": 0.5533,
       "outlook": "stormy",
-      "auc": 0.5444,
-      "balanced_acc": 0.5421,
-      "storm_recall": 0.5345,
+      "auc": 0.5443,
+      "balanced_acc": 0.545,
+      "storm_recall": 0.5364,
       "trust": "RED",
       "n_eval": 1295
     },
     {
       "horizon": 21,
-      "storm_prob": 0.7321,
+      "storm_prob": 0.7888,
       "outlook": "stormy",
-      "auc": 0.5546,
-      "balanced_acc": 0.5453,
-      "storm_recall": 0.6025,
+      "auc": 0.5578,
+      "balanced_acc": 0.5486,
+      "storm_recall": 0.607,
       "trust": "AMBER",
       "n_eval": 1290
     }
   ],
-  "headline_storm_prob": 0.5602,
+  "headline_storm_prob": 0.4793,
   "max_trusted_horizon": 21,
-  "deploy_pct": 45.0
+  "deploy_pct": 25.0
 }

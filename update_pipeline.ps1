@@ -41,7 +41,10 @@ function Build-Instrument($csv, $symbol, $start) {
     Write-Host "`nProcessing $symbol..." -ForegroundColor Yellow
     Invoke-Step "core features ($symbol)" { cargo run --manifest-path core/Cargo.toml --release -- "$csv" $symbol "$start" }
     Invoke-Step "kmeans labels ($symbol)" { & $Python research/kmeans_regime.py --input "output/features_$symbol.json" --output "output/regime_clustered_$symbol.json" --symbol $symbol }
-    Invoke-Step "xgb train ($symbol)" { & $Python research/xgb_regime.py --input "output/features_$symbol.json" --model-out "output/xgb_model_$symbol.pkl" --labels "output/regime_clustered_$symbol.json" --symbol $symbol }
+    # --shift 0 => DETECTION (nowcast the current regime, ~90% accuracy). The old
+    # 21-day-ahead direction forecast scored ~34% (direction is unforecastable);
+    # forward-looking signal now lives in the risk ladder of forecast_horizons.py.
+    Invoke-Step "xgb train ($symbol)" { & $Python research/xgb_regime.py --input "output/features_$symbol.json" --model-out "output/xgb_model_$symbol.pkl" --labels "output/regime_clustered_$symbol.json" --symbol $symbol --shift 0 }
     Invoke-Step "model metrics ($symbol)" { & $Python research/export_model_metrics.py --model "output/xgb_model_$symbol.pkl" --input "output/features_$symbol.json" --symbol $symbol --json-out "$Data/metrics_$symbol.json" --predictions "$Data/regime_$symbol.json" }
     # Multi-horizon forward forecaster (5/10/15/21d) + deploy gate -> forecast_<symbol>.json
     Invoke-Step "horizon forecast ($symbol)" { & $Python research/forecast_horizons.py --input "output/features_$symbol.json" --symbol $symbol --json-out "$Data/forecast_$symbol.json" }
@@ -76,7 +79,7 @@ $OOS = @(
 foreach ($o in $OOS) {
     $trainedOn = $o[0]; $target = $o[1]; $out = $o[2]
     Invoke-Step "OOS $trainedOn -> $target" {
-        & $Python research/predict_oos.py --model "output/xgb_model_$trainedOn.pkl" --input "output/features_$target.json" --symbol $target --trained-on $trainedOn --json-out "$Data/$out"
+        & $Python research/predict_oos.py --model "output/xgb_model_$trainedOn.pkl" --input "output/features_$target.json" --symbol $target --trained-on $trainedOn --json-out "$Data/$out" --horizon 0
     }
 }
 

@@ -1,13 +1,13 @@
 {
   "symbol": "NIFTY",
   "as_of": "2026-06-05",
-  "close": 23496.599609375,
+  "close": 23326.900390625,
   "detection": {
     "regime": "bear",
-    "confidence": 0.7804,
-    "prob_bear": 0.7804,
-    "prob_sideways": 0.2146,
-    "prob_bull": 0.005,
+    "confidence": 0.9953,
+    "prob_bear": 0.9953,
+    "prob_sideways": 0.0041,
+    "prob_bull": 0.0006,
     "oof_accuracy": 0.9163,
     "baseline": 0.4753,
     "n_eval": 1315
@@ -15,46 +15,46 @@
   "risk": [
     {
       "horizon": 5,
-      "storm_prob": 0.1859,
+      "storm_prob": 0.1291,
       "outlook": "calm",
-      "auc": 0.6352,
-      "balanced_acc": 0.5953,
-      "storm_recall": 0.4788,
+      "auc": 0.6358,
+      "balanced_acc": 0.6028,
+      "storm_recall": 0.4925,
       "trust": "GREEN",
       "n_eval": 1310
     },
     {
       "horizon": 10,
-      "storm_prob": 0.1349,
+      "storm_prob": 0.078,
       "outlook": "calm",
-      "auc": 0.6805,
-      "balanced_acc": 0.6394,
-      "storm_recall": 0.6274,
+      "auc": 0.6804,
+      "balanced_acc": 0.6342,
+      "storm_recall": 0.6226,
       "trust": "GREEN",
       "n_eval": 1305
     },
     {
       "horizon": 15,
-      "storm_prob": 0.1189,
+      "storm_prob": 0.2841,
       "outlook": "calm",
-      "auc": 0.6678,
-      "balanced_acc": 0.6466,
-      "storm_recall": 0.7018,
+      "auc": 0.6666,
+      "balanced_acc": 0.6453,
+      "storm_recall": 0.6989,
       "trust": "GREEN",
       "n_eval": 1300
     },
     {
       "horizon": 21,
-      "storm_prob": 0.1376,
+      "storm_prob": 0.1775,
       "outlook": "calm",
-      "auc": 0.6757,
-      "balanced_acc": 0.6279,
-      "storm_recall": 0.6811,
+      "auc": 0.6735,
+      "balanced_acc": 0.6227,
+      "storm_recall": 0.6825,
       "trust": "GREEN",
       "n_eval": 1295
     }
   ],
-  "headline_storm_prob": 0.1443,
+  "headline_storm_prob": 0.1672,
   "max_trusted_horizon": 21,
-  "deploy_pct": 40.0
+  "deploy_pct": 25.0
 }
