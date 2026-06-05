@@ -1,13 +1,13 @@
 {
   "symbol": "NIFTY_500",
   "as_of": "2026-06-05",
-  "close": 22424.05078125,
+  "close": 22465.349609375,
   "detection": {
     "regime": "bear",
-    "confidence": 0.9742,
-    "prob_bear": 0.9742,
-    "prob_sideways": 0.0236,
-    "prob_bull": 0.0022,
+    "confidence": 0.9417,
+    "prob_bear": 0.9417,
+    "prob_sideways": 0.0549,
+    "prob_bull": 0.0035,
     "oof_accuracy": 0.8924,
     "baseline": 0.4542,
     "n_eval": 1310
@@ -15,7 +15,7 @@
   "risk": [
     {
       "horizon": 5,
-      "storm_prob": 0.2836,
+      "storm_prob": 0.2552,
       "outlook": "calm",
       "auc": 0.656,
       "balanced_acc": 0.6139,
@@ -25,7 +25,7 @@
     },
     {
       "horizon": 10,
-      "storm_prob": 0.3654,
+      "storm_prob": 0.4301,
       "outlook": "calm",
       "auc": 0.6024,
       "balanced_acc": 0.5924,
@@ -35,7 +35,7 @@
     },
     {
       "horizon": 15,
-      "storm_prob": 0.5533,
+      "storm_prob": 0.5457,
       "outlook": "stormy",
       "auc": 0.5443,
       "balanced_acc": 0.545,
@@ -45,7 +45,7 @@
     },
     {
       "horizon": 21,
-      "storm_prob": 0.7888,
+      "storm_prob": 0.7868,
       "outlook": "stormy",
       "auc": 0.5578,
       "balanced_acc": 0.5486,
@@ -54,7 +54,7 @@
       "n_eval": 1290
     }
   ],
-  "headline_storm_prob": 0.4793,
+  "headline_storm_prob": 0.4907,
   "max_trusted_horizon": 21,
   "deploy_pct": 25.0
 }
