@@ -870,53 +870,75 @@ export default function Page() {
                          <div className="flex flex-wrap items-end justify-between gap-6 relative">
                            <div>
                              <span className="text-[11px] font-medium text-zinc-400 block mb-2">Recommended deployment · as of {forecastData.as_of}</span>
-                             <div className="text-6xl font-semibold tracking-tight tabular-nums">{forecastData.headline_deploy_pct}%</div>
+                             <div className="text-6xl font-semibold tracking-tight tabular-nums">{forecastData.deploy_pct}%</div>
                              <span className="text-[11px] text-zinc-400 mt-2 block">
-                               {forecastData.max_trusted_horizon > 0
-                                 ? `Forecast trusted out to ${forecastData.max_trusted_horizon} trading days`
-                                 : 'No horizon beats its baseline — model stands aside (neutral allocation)'}
+                               {forecastData.detection?.regime
+                                 ? `Current regime ${String(forecastData.detection.regime).toUpperCase()} · risk outlook trusted to ${forecastData.max_trusted_horizon}d`
+                                 : ''}
                              </span>
                            </div>
                            <div className="w-full sm:w-64">
                              <div className="h-3 bg-white/10 rounded-full overflow-hidden">
-                               <div className="h-full bg-emerald-500" style={{ width: `${forecastData.headline_deploy_pct}%` }} />
+                               <div className="h-full bg-emerald-500" style={{ width: `${forecastData.deploy_pct}%` }} />
                              </div>
                              <div className="flex justify-between text-[10px] text-zinc-500 mt-1"><span>Defensive</span><span>Full</span></div>
                            </div>
                          </div>
                        </div>
 
-                       {/* Horizon ladder: 5 / 10 / 15 / 21 day */}
-                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                         {forecastData.horizons.map((h: any) => {
-                           const rc = h.forecast_regime === 'bull' ? 'text-emerald-600'
-                             : h.forecast_regime === 'bear' ? 'text-rose-600' : 'text-zinc-500';
-                           const trustCls = h.trust === 'GREEN' ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                             : h.trust === 'AMBER' ? 'bg-amber-50 text-amber-700 border-amber-200'
-                             : 'bg-zinc-100 text-zinc-500 border-zinc-200';
-                           const dim = h.trust === 'RED' ? 'opacity-60' : '';
-                           return (
-                             <div key={h.horizon} className={`bg-white rounded-2xl p-6 border border-zinc-200/90 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${dim}`}>
-                               <div className="flex items-center justify-between mb-4">
-                                 <span className="text-[13px] font-semibold text-zinc-900">{h.horizon}-day</span>
-                                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-lg border ${trustCls}`}>{h.trust}</span>
-                               </div>
-                               <div className={`text-3xl font-semibold capitalize tracking-tight mb-1 ${rc}`}>{h.forecast_regime}</div>
-                               <div className="text-[11px] text-zinc-400 mb-4">{(h.confidence * 100).toFixed(0)}% confidence</div>
-                               <div className="space-y-1.5 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3">
-                                 <div className="flex justify-between"><span>Backtest acc</span><span className="tabular-nums text-zinc-700">{(h.oof_accuracy * 100).toFixed(1)}%</span></div>
-                                 <div className="flex justify-between"><span>Baseline</span><span className="tabular-nums">{(h.baseline * 100).toFixed(1)}%</span></div>
-                                 <div className="flex justify-between"><span>Edge</span><span className={`tabular-nums font-semibold ${h.skill >= 0 ? 'text-emerald-600' : 'text-rose-600'}`}>{h.skill >= 0 ? '+' : ''}{(h.skill * 100).toFixed(1)}%</span></div>
-                                 <div className="flex justify-between pt-1"><span>Deploy</span><span className="tabular-nums font-semibold text-zinc-900">{h.deploy_pct}%</span></div>
-                               </div>
+                       {/* Detection: current-regime nowcast (high accuracy) */}
+                       {forecastData.detection && (
+                         <div className="bg-white rounded-2xl p-8 border border-zinc-200/90 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                           <div className="flex flex-wrap items-center justify-between gap-4">
+                             <div>
+                               <span className="text-[11px] font-medium text-zinc-500 block mb-1">Current regime — detection (nowcast)</span>
+                               <div className={`text-5xl font-semibold capitalize tracking-tight ${
+                                 forecastData.detection.regime === 'bull' ? 'text-emerald-600'
+                                   : forecastData.detection.regime === 'bear' ? 'text-rose-600' : 'text-zinc-500'
+                               }`}>{forecastData.detection.regime}</div>
+                               <span className="text-[11px] text-zinc-400 mt-1 block">{(forecastData.detection.confidence * 100).toFixed(0)}% confidence</span>
                              </div>
-                           );
-                         })}
+                             <div className="text-right text-[11px] text-zinc-500 space-y-1">
+                               <div>Backtest accuracy <span className="font-semibold text-emerald-600 tabular-nums">{(forecastData.detection.oof_accuracy * 100).toFixed(1)}%</span></div>
+                               <div>vs baseline <span className="tabular-nums">{(forecastData.detection.baseline * 100).toFixed(1)}%</span></div>
+                               <div className="text-zinc-400">+{((forecastData.detection.oof_accuracy - forecastData.detection.baseline) * 100).toFixed(0)} pts edge</div>
+                             </div>
+                           </div>
+                         </div>
+                       )}
+
+                       {/* Forward risk ladder: calm/stormy at 5 / 10 / 15 / 21 day */}
+                       <div>
+                         <h3 className="text-[12px] font-semibold text-zinc-700 mb-3 px-1">Forward risk outlook (next 5 / 10 / 15 / 21 days)</h3>
+                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                           {(forecastData.risk || []).map((r: any) => {
+                             const stormy = r.outlook === 'stormy';
+                             const trustCls = r.trust === 'GREEN' ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                               : r.trust === 'AMBER' ? 'bg-amber-50 text-amber-700 border-amber-200'
+                               : 'bg-zinc-100 text-zinc-500 border-zinc-200';
+                             const dim = r.trust === 'RED' ? 'opacity-60' : '';
+                             return (
+                               <div key={r.horizon} className={`bg-white rounded-2xl p-6 border border-zinc-200/90 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${dim}`}>
+                                 <div className="flex items-center justify-between mb-4">
+                                   <span className="text-[13px] font-semibold text-zinc-900">{r.horizon}-day</span>
+                                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-lg border ${trustCls}`}>{r.trust}</span>
+                                 </div>
+                                 <div className={`text-3xl font-semibold capitalize tracking-tight mb-1 ${stormy ? 'text-rose-600' : 'text-emerald-600'}`}>{r.outlook}</div>
+                                 <div className="text-[11px] text-zinc-400 mb-4">{(r.storm_prob * 100).toFixed(0)}% storm probability</div>
+                                 <div className="space-y-1.5 text-[11px] text-zinc-500 border-t border-zinc-100 pt-3">
+                                   <div className="flex justify-between"><span>AUC (skill)</span><span className="tabular-nums text-zinc-700">{r.auc.toFixed(3)}</span></div>
+                                   <div className="flex justify-between"><span>Balanced acc</span><span className="tabular-nums">{(r.balanced_acc * 100).toFixed(1)}%</span></div>
+                                   <div className="flex justify-between"><span>Storm recall</span><span className="tabular-nums">{(r.storm_recall * 100).toFixed(0)}%</span></div>
+                                 </div>
+                               </div>
+                             );
+                           })}
+                         </div>
                        </div>
 
                        {/* Honest reading guide */}
                        <div className="px-5 py-4 rounded-xl bg-zinc-50 border border-zinc-200/80 text-[11px] text-zinc-500 leading-relaxed">
-                         <span className="font-bold text-zinc-700">How to read this:</span> each horizon is an independent model predicting the forward-return bucket that many days out, validated by walk-forward backtest. <span className="text-emerald-700 font-semibold">GREEN</span> beats its naive baseline by ≥8 pts (trust it); <span className="text-amber-700 font-semibold">AMBER</span> is a marginal edge; <span className="text-zinc-600 font-semibold">RED</span> means no edge over guessing the majority class, so the deploy collapses to a neutral 65% (stand aside). Short horizons are usually more reliable than long ones.
+                         <span className="font-bold text-zinc-700">How to read this:</span> <b>Detection</b> nowcasts the regime you are in now — the present is observable, so accuracy is ~90%. <b>Forward risk</b> forecasts whether the next 5–21 days will be calm or stormy, graded by <b>AUC</b> (ranking skill) because the calm class dominates and raw accuracy would be misleading. <span className="text-emerald-700 font-semibold">GREEN</span> AUC ≥ 0.62, <span className="text-amber-700 font-semibold">AMBER</span> ≥ 0.55, <span className="text-zinc-600 font-semibold">RED</span> below. Direction (up/down) is deliberately excluded — it is not forecastable at these horizons. Deploy % follows the detected regime, cut when a trusted storm is likely.
                        </div>
                      </>
                    )}

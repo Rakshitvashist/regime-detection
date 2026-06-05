@@ -2,64 +2,59 @@
   "symbol": "NIFTY_500",
   "as_of": "2026-06-05",
   "close": 22602.44921875,
-  "headline_deploy_pct": 65.0,
-  "max_trusted_horizon": 0,
-  "horizons": [
+  "detection": {
+    "regime": "sideways",
+    "confidence": 0.9972,
+    "prob_bear": 0.0014,
+    "prob_sideways": 0.9972,
+    "prob_bull": 0.0014,
+    "oof_accuracy": 0.8916,
+    "baseline": 0.4542,
+    "n_eval": 1310
+  },
+  "risk": [
     {
       "horizon": 5,
-      "forecast_regime": "bear",
-      "confidence": 0.7007,
-      "prob_bear": 0.7007,
-      "prob_sideways": 0.1552,
-      "prob_bull": 0.1441,
-      "oof_accuracy": 0.3554,
-      "baseline": 0.4392,
-      "skill": -0.0838,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1300
+      "storm_prob": 0.512,
+      "outlook": "stormy",
+      "auc": 0.6555,
+      "balanced_acc": 0.6074,
+      "storm_recall": 0.5274,
+      "trust": "GREEN",
+      "n_eval": 1305
     },
     {
       "horizon": 10,
-      "forecast_regime": "bear",
-      "confidence": 0.7001,
-      "prob_bear": 0.7001,
-      "prob_sideways": 0.1649,
-      "prob_bull": 0.1351,
-      "oof_accuracy": 0.3248,
-      "baseline": 0.4186,
-      "skill": -0.0938,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1290
+      "storm_prob": 0.4364,
+      "outlook": "calm",
+      "auc": 0.6017,
+      "balanced_acc": 0.5969,
+      "storm_recall": 0.5651,
+      "trust": "AMBER",
+      "n_eval": 1300
     },
     {
       "horizon": 15,
-      "forecast_regime": "bear",
-      "confidence": 0.7199,
-      "prob_bear": 0.7199,
-      "prob_sideways": 0.1043,
-      "prob_bull": 0.1758,
-      "oof_accuracy": 0.3541,
-      "baseline": 0.4148,
-      "skill": -0.0607,
+      "storm_prob": 0.571,
+      "outlook": "stormy",
+      "auc": 0.5444,
+      "balanced_acc": 0.5421,
+      "storm_recall": 0.5345,
       "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1285
+      "n_eval": 1295
     },
     {
       "horizon": 21,
-      "forecast_regime": "bear",
-      "confidence": 0.7836,
-      "prob_bear": 0.7836,
-      "prob_sideways": 0.0895,
-      "prob_bull": 0.127,
-      "oof_accuracy": 0.3451,
-      "baseline": 0.458,
-      "skill": -0.1129,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1275
+      "storm_prob": 0.7321,
+      "outlook": "stormy",
+      "auc": 0.5546,
+      "balanced_acc": 0.5453,
+      "storm_recall": 0.6025,
+      "trust": "AMBER",
+      "n_eval": 1290
     }
-  ]
+  ],
+  "headline_storm_prob": 0.5602,
+  "max_trusted_horizon": 21,
+  "deploy_pct": 45.0
 }

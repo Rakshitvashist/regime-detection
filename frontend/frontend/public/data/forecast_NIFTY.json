@@ -2,64 +2,59 @@
   "symbol": "NIFTY",
   "as_of": "2026-06-05",
   "close": 23496.599609375,
-  "headline_deploy_pct": 65.0,
-  "max_trusted_horizon": 0,
-  "horizons": [
+  "detection": {
+    "regime": "bear",
+    "confidence": 0.7804,
+    "prob_bear": 0.7804,
+    "prob_sideways": 0.2146,
+    "prob_bull": 0.005,
+    "oof_accuracy": 0.9163,
+    "baseline": 0.4753,
+    "n_eval": 1315
+  },
+  "risk": [
     {
       "horizon": 5,
-      "forecast_regime": "bear",
-      "confidence": 0.6743,
-      "prob_bear": 0.6743,
-      "prob_sideways": 0.2069,
-      "prob_bull": 0.1188,
-      "oof_accuracy": 0.3739,
-      "baseline": 0.4483,
-      "skill": -0.0743,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1305
+      "storm_prob": 0.1859,
+      "outlook": "calm",
+      "auc": 0.6352,
+      "balanced_acc": 0.5953,
+      "storm_recall": 0.4788,
+      "trust": "GREEN",
+      "n_eval": 1310
     },
     {
       "horizon": 10,
-      "forecast_regime": "sideways",
-      "confidence": 0.4623,
-      "prob_bear": 0.2875,
-      "prob_sideways": 0.4623,
-      "prob_bull": 0.2502,
-      "oof_accuracy": 0.3552,
-      "baseline": 0.4471,
-      "skill": -0.0919,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1295
+      "storm_prob": 0.1349,
+      "outlook": "calm",
+      "auc": 0.6805,
+      "balanced_acc": 0.6394,
+      "storm_recall": 0.6274,
+      "trust": "GREEN",
+      "n_eval": 1305
     },
     {
       "horizon": 15,
-      "forecast_regime": "sideways",
-      "confidence": 0.4401,
-      "prob_bear": 0.4401,
-      "prob_sideways": 0.146,
-      "prob_bull": 0.4139,
-      "oof_accuracy": 0.3628,
-      "baseline": 0.4279,
-      "skill": -0.0651,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1290
+      "storm_prob": 0.1189,
+      "outlook": "calm",
+      "auc": 0.6678,
+      "balanced_acc": 0.6466,
+      "storm_recall": 0.7018,
+      "trust": "GREEN",
+      "n_eval": 1300
     },
     {
       "horizon": 21,
-      "forecast_regime": "bear",
-      "confidence": 0.5893,
-      "prob_bear": 0.5893,
-      "prob_sideways": 0.1667,
-      "prob_bull": 0.2439,
-      "oof_accuracy": 0.3438,
-      "baseline": 0.4844,
-      "skill": -0.1406,
-      "trust": "RED",
-      "deploy_pct": 65.0,
-      "n_eval": 1280
+      "storm_prob": 0.1376,
+      "outlook": "calm",
+      "auc": 0.6757,
+      "balanced_acc": 0.6279,
+      "storm_recall": 0.6811,
+      "trust": "GREEN",
+      "n_eval": 1295
     }
-  ]
+  ],
+  "headline_storm_prob": 0.1443,
+  "max_trusted_horizon": 21,
+  "deploy_pct": 40.0
 }
