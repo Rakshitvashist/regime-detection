@@ -19,3 +19,6 @@ rustup-init.exe
 # Node
 frontend/**/node_modules/
 .next/
+
+# Local tooling
+.claude/
