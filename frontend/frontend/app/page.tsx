@@ -355,6 +355,13 @@ export default function Page() {
           </div>
         </div>
 
+        <a
+          href="/our-models"
+          className="mb-6 block rounded-lg bg-indigo-600 text-white text-center text-[12px] font-semibold py-2.5 hover:bg-indigo-700 transition-colors print:hidden"
+        >
+          ★ New Models — Intraday / Weekly / Monthly
+        </a>
+
         <div className="flex flex-col gap-6 flex-1">
 
           {/* In-sample instruments */}
